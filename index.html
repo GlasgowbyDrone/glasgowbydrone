@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Glasgow by Drone | Drone Photography & Videography Scotland</title>
+  <!-- SEO -->
   <meta name="description" content="Glasgow by Drone provides cinematic drone footage, aerial photography, and roof inspections across Glasgow and Scotland. Download our media pack and get in touch today.">
   <meta name="keywords" content="Glasgow drone services, drone Glasgow, aerial photography Glasgow, drone inspection Scotland, drone videography, drone operator Glasgow, drone roof inspection, drone filming Scotland, cinematic drone Glasgow, FPV drone UK, drone services Scotland">
   <meta property="og:title" content="Glasgow by Drone | Premium Drone Services Scotland" />
@@ -24,64 +25,117 @@
       --accent-dark: #5022a5;
       --bg1: #1b093a;
       --bg2: #321165;
-      --gradient: linear-gradient(120deg, var(--bg1) 0%, var(--primary) 60%, var(--bg2) 100%);
     }
-
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
       font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+      background: var(--primary);
+      color: #fff;
+      overflow: hidden;
     }
-
     body {
       min-height: 100vh;
-      background: var(--gradient);
-      background-size: 400% 400%;
-      animation: gradientBG 16s ease-in-out infinite;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
+      width: 100vw;
+    }
+    a {
+      text-decoration: none !important; /* Removes all underlines */
+      color: inherit;
     }
 
-    @keyframes gradientBG {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    /* --- INTRO PAGE --- */
+    #intro {
+      position: fixed;
+      z-index: 10000;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity .8s cubic-bezier(.5,1.1,.7,1);
+      opacity: 1;
+      pointer-events: all;
+    }
+    #intro.hide {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .8s cubic-bezier(.65,1.2,.5,1.08);
+    }
+    #intro .intro-logo {
+      width: clamp(180px, 25vw, 330px);
+      opacity: 0;
+      transform: scale(.82);
+      animation: introLogoAnim 1.1s cubic-bezier(.27,1.2,.7,1.03) .15s forwards;
+      filter: drop-shadow(0 6px 36px rgba(255,0,180,0.11));
+    }
+    @keyframes introLogoAnim {
+      0% { opacity: 0; transform: scale(.82) rotate(-7deg);}
+      80% { opacity: 1; transform: scale(1.07) rotate(1.5deg);}
+      100% { opacity: 1; transform: scale(1) rotate(0);}
+    }
+
+    /* --- MAIN CONTENT PAGE --- */
+    #main-content {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .7s cubic-bezier(.5,1.15,.7,1.08);
+      min-height: 100vh;
+      min-width: 100vw;
+    }
+    #main-content.visible {
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity .8s cubic-bezier(.4,1.13,.6,1.09);
+    }
+
+    /* --- VIDEO BG --- */
+    #bg-video {
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      object-fit: cover;
+      filter: brightness(.59) blur(0.5px);
+      pointer-events: none;
+      background: #1b093a;
     }
 
     .logo-container {
       margin-top: clamp(30px, 6vw, 64px);
       margin-bottom: clamp(36px, 5vw, 64px);
-      animation: logoFadeIn 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+      animation: logoFadeIn 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67) .8s forwards;
       opacity: 0;
       width: 100%;
       display: flex;
       justify-content: center;
+      z-index: 2;
+      position: relative;
     }
     @keyframes logoFadeIn {
       from { opacity: 0; transform: scale(0.85) rotate(-6deg);}
-      to { opacity: 1; transform: scale(1) rotate(0deg);}
+      to { opacity: 1; transform: scale(1) rotate(0);}
     }
 
     .logo {
-      width: clamp(150px, 24vw, 320px);
-      max-width: 96vw;
-      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.18));
+      width: clamp(150px, 22vw, 290px);
+      max-width: 97vw;
+      filter: drop-shadow(0 4px 18px rgba(0,0,0,0.15));
       transition: transform 0.3s cubic-bezier(.65,1.2,.6,1);
+      background: transparent;
     }
     .logo:hover { transform: scale(1.06) rotate(2deg); }
 
     .content {
+      min-height: 70vh;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 22px;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      margin-bottom: 40px;
+      width: 100vw;
+      margin-bottom: 46px;
+      z-index: 2;
+      position: relative;
     }
 
     .btn {
@@ -97,12 +151,12 @@
       border-radius: 13px;
       font-weight: bold;
       letter-spacing: .01em;
-      box-shadow: 0 2px 18px 0 rgba(34,3,46,0.16);
+      box-shadow: 0 2px 18px 0 rgba(34,3,46,0.13);
       cursor: pointer;
       outline: none;
       margin: 0 auto;
       width: 320px;
-      max-width: 90vw;
+      max-width: 93vw;
       margin-bottom: 12px;
       transition: 
         background 0.2s cubic-bezier(.6,1,.6,1),
@@ -111,12 +165,14 @@
       overflow: hidden;
       z-index: 1;
       min-height: 54px;
+      text-decoration: none !important;
     }
 
     .btn:focus, .btn:hover {
       background: linear-gradient(90deg, var(--accent-dark), var(--accent) 85%);
       transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 6px 36px 0 rgba(34,3,46,0.20);
+      box-shadow: 0 6px 36px 0 rgba(34,3,46,0.18);
+      text-decoration: none !important;
     }
 
     .btn .btn-icon {
@@ -124,11 +180,11 @@
       left: 22px;
       font-size: 1.3em;
       transition: transform .18s cubic-bezier(.7,1.2,.6,1);
+      text-decoration: none !important;
     }
-
     .btn:hover .btn-icon,
     .btn:focus .btn-icon {
-      transform: rotate(-18deg) scale(1.16);
+      transform: rotate(-18deg) scale(1.14);
     }
 
     .footer {
@@ -144,6 +200,7 @@
       text-align: center;
       padding-bottom: 10px;
       user-select: text;
+      background: none;
     }
 
     /* Modal & Contact Buttons */
@@ -163,7 +220,6 @@
       from { opacity: 0; transform: scale(0.97);}
       to { opacity: 1; transform: scale(1);}
     }
-
     .modal .close-btn {
       position: absolute;
       top: 24px;
@@ -178,7 +234,6 @@
       transition: opacity 0.13s;
     }
     .modal .close-btn:hover { opacity: 1; }
-
     .contact-group {
       display: flex;
       flex-direction: column;
@@ -189,7 +244,6 @@
       margin: 0 auto;
       margin-top: 12px;
     }
-
     .contact-btn {
       background: #fff;
       color: var(--primary);
@@ -210,22 +264,24 @@
         background 0.21s,
         color 0.21s,
         transform 0.15s;
+      text-decoration: none !important;
     }
     .contact-btn:hover, .contact-btn:focus {
       background: var(--accent);
       color: #fff;
       transform: scale(1.03) translateY(-1px);
+      text-decoration: none !important;
     }
     .contact-btn .btn-icon {
       font-size: 1.4em;
       margin-right: 16px;
       min-width: 1.2em;
+      text-decoration: none !important;
     }
-
     /* Responsive tweaks */
     @media (max-width: 600px) {
       .logo-container { margin-top: 20px; margin-bottom: 22px; }
-      .content { gap: 12px; }
+      .content { gap: 13px; }
       .btn { width: 95vw; min-width: 0; font-size: 1rem; }
       .contact-group { max-width: 95vw; }
       .footer { font-size: 0.93rem;}
@@ -234,54 +290,71 @@
 </head>
 
 <body>
-
-  <div class="logo-container">
-    <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
+  <!-- Landing/Intro Page -->
+  <div id="intro">
+    <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="intro-logo" />
   </div>
 
-  <div class="content">
-    <a href="business_pack.pdf" download>
-      <button class="btn" aria-label="Download our media pack">
-        <span class="btn-icon" aria-hidden="true">📄</span>
-        Download Media Pack
+  <!-- Main Page (hidden initially) -->
+  <div id="main-content">
+    <video id="bg-video" src="website_background.mp4" autoplay loop muted playsinline></video>
+
+    <div class="logo-container">
+      <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
+    </div>
+
+    <div class="content">
+      <a href="business_pack.pdf" download>
+        <button class="btn" aria-label="Download our media pack">
+          <span class="btn-icon" aria-hidden="true">📄</span>
+          Download Media Pack
+        </button>
+      </a>
+      <button class="btn" onclick="toggleModal()" aria-label="Contact us">
+        <span class="btn-icon" aria-hidden="true">💬</span>
+        Contact Us
       </button>
-    </a>
-    <button class="btn" onclick="toggleModal()" aria-label="Contact us">
-      <span class="btn-icon" aria-hidden="true">💬</span>
-      Contact Us
-    </button>
-  </div>
+    </div>
 
-  <div class="modal" id="contactModal" tabindex="-1" aria-modal="true">
-    <button class="close-btn" onclick="toggleModal()" aria-label="Close Contact Options">&times;</button>
-    <div class="contact-group">
-      <a href="tel:+441414591053" style="width:100%;" tabindex="0">
-        <button class="contact-btn">
-          <span class="btn-icon" aria-hidden="true">📞</span>
-          Call: +44 141 459 1053
-        </button>
-      </a>
-      <a href="mailto:info@glasgowbydrone.co.uk" style="width:100%;" tabindex="0">
-        <button class="contact-btn">
-          <span class="btn-icon" aria-hidden="true">✉️</span>
-          Email: info@glasgowbydrone.co.uk
-        </button>
-      </a>
-      <a href="https://instagram.com/glasgowbydroneofficial" target="_blank" rel="noopener" style="width:100%;" tabindex="0">
-        <button class="contact-btn">
-          <span class="btn-icon" aria-hidden="true">📸</span>
-          Instagram @glasgowbydroneofficial
-        </button>
-      </a>
+    <div class="modal" id="contactModal" tabindex="-1" aria-modal="true">
+      <button class="close-btn" onclick="toggleModal()" aria-label="Close Contact Options">&times;</button>
+      <div class="contact-group">
+        <a href="tel:+441414591053" style="width:100%;" tabindex="0">
+          <button class="contact-btn">
+            <span class="btn-icon" aria-hidden="true">📞</span>
+            Call: +44 141 459 1053
+          </button>
+        </a>
+        <a href="mailto:info@glasgowbydrone.co.uk" style="width:100%;" tabindex="0">
+          <button class="contact-btn">
+            <span class="btn-icon" aria-hidden="true">✉️</span>
+            Email: info@glasgowbydrone.co.uk
+          </button>
+        </a>
+        <a href="https://instagram.com/glasgowbydroneofficial" target="_blank" rel="noopener" style="width:100%;" tabindex="0">
+          <button class="contact-btn">
+            <span class="btn-icon" aria-hidden="true">📸</span>
+            Instagram @glasgowbydroneofficial
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2025 Glasgow by Drone &mdash; Premium Drone Photography, Videography & Inspections, Scotland
     </div>
   </div>
 
-  <div class="footer">
-    &copy; 2025 Glasgow by Drone &mdash; Premium Drone Photography, Videography & Inspections, Scotland
-  </div>
-
   <script>
-    // Modal open/close logic with keyboard accessibility
+    // Intro → Main page logic
+    setTimeout(() => {
+      document.getElementById('intro').classList.add('hide');
+      setTimeout(() => {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('main-content').classList.add('visible');
+      }, 900);
+    }, 2000);
+
+    // Modal open/close logic
     function toggleModal() {
       const modal = document.getElementById('contactModal');
       if (modal.style.display === 'flex') {
@@ -296,7 +369,7 @@
     // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
       const modal = document.getElementById('contactModal');
-      if (modal.style.display === 'flex' && (e.key === "Escape" || e.key === "Esc")) {
+      if (modal && modal.style.display === 'flex' && (e.key === "Escape" || e.key === "Esc")) {
         toggleModal();
       }
     });
@@ -304,7 +377,13 @@
     document.getElementById('contactModal').addEventListener('wheel', function(e) {
       if (this.style.display === 'flex') e.preventDefault();
     }, { passive: false });
-  </script>
 
+    // Remove all underlines, even on autofill/focus/visited
+    window.onload = function() {
+      const style = document.createElement('style');
+      style.innerHTML = 'a, a:visited, a:active, a:focus { text-decoration: none !important; outline: none !important; }';
+      document.head.appendChild(style);
+    }
+  </script>
 </body>
 </html>
