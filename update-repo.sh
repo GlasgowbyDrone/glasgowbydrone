@@ -1,15 +1,22 @@
 #!/bin/bash
 
+echo ""
+echo "📌 Enter your commit message:"
+read commit_message
+
 echo "🔄 Staging all changes..."
 git add .
 
-echo "✍️  Committing with default message..."
-git commit -m "Full repo update from VS Code"
+echo "✍️ Committing..."
+git commit -m "$commit_message"
 
-echo "⬇️  Rebasing with origin/main..."
+echo "⬇️ Rebasing with remote..."
 git pull origin main --rebase
 
 echo "🚀 Pushing to GitHub..."
 git push origin main
 
-echo "✅ Repo successfully updated!"
+echo "🌐 Opening live site..."
+open "https://glasgowbydrone.github.io/glasgowbydrone/"
+
+echo "✅ Done! Repo updated and site live."
