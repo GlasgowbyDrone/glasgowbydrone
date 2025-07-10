@@ -1,144 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Glasgow by Drone | Drone Photography & Videography Scotland</title>
-      
-        <!-- SEO Meta Description -->
-        <meta name="description" content="Glasgow by Drone provides cinematic drone footage, aerial photography, and roof inspections across Glasgow and Scotland. Download our media pack and get in touch today.">
-      
-        <!-- Keywords -->
-        <meta name="keywords" content="Glasgow drone services, drone Glasgow, aerial photography Glasgow, drone inspection Scotland, drone videography, drone operator Glasgow, drone roof inspection, drone filming Scotland, cinematic drone Glasgow, FPV drone UK, drone services Scotland">
-      
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="Glasgow by Drone | Premium Drone Services Scotland" />
-        <meta property="og:description" content="Cinematic aerial photography, FPV video, and drone inspections in Glasgow and across Scotland. Trusted drone operator for commercial and creative work." />
-        <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
-        <meta property="og:url" content="https://glasgowbydrone.github.io/glasgowbydrone/" />
-        <meta property="og:type" content="website" />
-      
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Glasgow by Drone | Aerial Photography & Videography" />
-        <meta name="twitter:description" content="Explore our premium drone footage and inspection services across Glasgow and Scotland.">
-        <meta name="twitter:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
-      
-        <!-- Favicon -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-      
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glasgow by Drone | Drone Photography & Videography Scotland</title>
+  <meta name="description" content="Glasgow by Drone provides cinematic drone footage, aerial photography, and roof inspections across Glasgow and Scotland. Download our media pack and get in touch today.">
+  <meta name="keywords" content="Glasgow drone services, drone Glasgow, aerial photography Glasgow, drone inspection Scotland, drone videography, drone operator Glasgow, drone roof inspection, drone filming Scotland, cinematic drone Glasgow, FPV drone UK, drone services Scotland">
+  <meta property="og:title" content="Glasgow by Drone | Premium Drone Services Scotland" />
+  <meta property="og:description" content="Cinematic aerial photography, FPV video, and drone inspections in Glasgow and across Scotland. Trusted drone operator for commercial and creative work." />
+  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
+  <meta property="og:url" content="https://glasgowbydrone.github.io/glasgowbydrone/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glasgow by Drone | Aerial Photography & Videography" />
+  <meta name="twitter:description" content="Explore our premium drone footage and inspection services across Glasgow and Scotland.">
+  <meta name="twitter:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
-    * {
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --accent-dark: #5022a5;
+      --bg1: #1b093a;
+      --bg2: #321165;
+      --gradient: linear-gradient(120deg, var(--bg1) 0%, var(--primary) 60%, var(--bg2) 100%);
+    }
+
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #6C2BD9;
-      color: white;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      background: var(--gradient);
+      background-size: 400% 400%;
+      animation: gradientBG 16s ease-in-out infinite;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
       text-align: center;
     }
 
-    .logo-container {
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-      animation: logoIntro 1s ease-out forwards;
-      opacity: 0;
+    @keyframes gradientBG {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
-    @keyframes logoIntro {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-      }
+    .logo-container {
+      margin-top: clamp(30px, 6vw, 64px);
+      margin-bottom: clamp(36px, 5vw, 64px);
+      animation: logoFadeIn 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+      opacity: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    @keyframes logoFadeIn {
+      from { opacity: 0; transform: scale(0.85) rotate(-6deg);}
+      to { opacity: 1; transform: scale(1) rotate(0deg);}
     }
 
     .logo {
-      width: 220px;
-      max-width: 90vw;
+      width: clamp(150px, 24vw, 320px);
+      max-width: 96vw;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.18));
+      transition: transform 0.3s cubic-bezier(.65,1.2,.6,1);
     }
+    .logo:hover { transform: scale(1.06) rotate(2deg); }
 
     .content {
-      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 20px;
       align-items: center;
-      padding-top: 140px; /* leave space for logo */
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 40px;
     }
 
     .btn {
-      background-color: #FF01B6;
-      color: white;
-      padding: 15px 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, var(--accent), var(--primary) 90%);
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 17px 44px 17px 56px;
       border: none;
-      border-radius: 10px;
-      font-size: 1rem;
+      border-radius: 13px;
+      font-weight: bold;
+      letter-spacing: .01em;
+      box-shadow: 0 2px 18px 0 rgba(34,3,46,0.16);
       cursor: pointer;
-      margin: 10px;
-      transition: background-color 0.3s ease;
-      width: 260px;
+      outline: none;
+      margin: 0 auto;
+      width: 320px;
+      max-width: 90vw;
+      margin-bottom: 12px;
+      transition: 
+        background 0.2s cubic-bezier(.6,1,.6,1),
+        transform 0.13s cubic-bezier(.6,1.4,.6,1),
+        box-shadow 0.2s;
+      overflow: hidden;
+      z-index: 1;
+      min-height: 54px;
     }
 
-    .btn:hover {
-      background-color: #5022a5;
+    .btn:focus, .btn:hover {
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent) 85%);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 36px 0 rgba(34,3,46,0.20);
+    }
+
+    .btn .btn-icon {
+      position: absolute;
+      left: 22px;
+      font-size: 1.3em;
+      transition: transform .18s cubic-bezier(.7,1.2,.6,1);
+    }
+
+    .btn:hover .btn-icon,
+    .btn:focus .btn-icon {
+      transform: rotate(-18deg) scale(1.16);
     }
 
     .footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #ccc;
+      width: 100vw;
+      position: fixed;
+      left: 0;
+      bottom: 10px;
+      font-size: 1.01rem;
+      letter-spacing: 0.01em;
+      color: #c9c9e6;
+      opacity: 0.93;
+      z-index: 9;
+      text-align: center;
+      padding-bottom: 10px;
+      user-select: text;
     }
 
+    /* Modal & Contact Buttons */
     .modal {
       display: none;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.95);
+      background: rgba(30,11,39,0.96);
       position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
+      top: 0; left: 0;
+      height: 100vh; width: 100vw;
       justify-content: center;
       align-items: center;
-      z-index: 10;
+      z-index: 101;
+      animation: modalPop 0.24s cubic-bezier(.5,1.4,.7,1);
+    }
+    @keyframes modalPop {
+      from { opacity: 0; transform: scale(0.97);}
+      to { opacity: 1; transform: scale(1);}
     }
 
-    .modal button {
-      width: 260px;
-    }
-
-    .close-btn {
+    .modal .close-btn {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
+      top: 24px;
+      right: 38px;
+      font-size: 2.2rem;
+      color: #fff;
       background: none;
       border: none;
       cursor: pointer;
+      z-index: 103;
+      opacity: .7;
+      transition: opacity 0.13s;
+    }
+    .modal .close-btn:hover { opacity: 1; }
+
+    .contact-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      width: 94vw;
+      max-width: 380px;
+      margin: 0 auto;
+      margin-top: 12px;
     }
 
+    .contact-btn {
+      background: #fff;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.07rem;
+      border-radius: 11px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      min-width: 200px;
+      padding: 14px 0 14px 18px;
+      box-shadow: 0 2px 12px 0 rgba(34,3,46,0.06);
+      cursor: pointer;
+      outline: none;
+      transition: 
+        background 0.21s,
+        color 0.21s,
+        transform 0.15s;
+    }
+    .contact-btn:hover, .contact-btn:focus {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.03) translateY(-1px);
+    }
+    .contact-btn .btn-icon {
+      font-size: 1.4em;
+      margin-right: 16px;
+      min-width: 1.2em;
+    }
+
+    /* Responsive tweaks */
     @media (max-width: 600px) {
-      .btn, .modal button {
-        width: 80%;
-      }
+      .logo-container { margin-top: 20px; margin-bottom: 22px; }
+      .content { gap: 12px; }
+      .btn { width: 95vw; min-width: 0; font-size: 1rem; }
+      .contact-group { max-width: 95vw; }
+      .footer { font-size: 0.93rem;}
     }
   </style>
 </head>
@@ -151,24 +241,69 @@
 
   <div class="content">
     <a href="business_pack.pdf" download>
-      <button class="btn">Download Media Pack</button>
+      <button class="btn" aria-label="Download our media pack">
+        <span class="btn-icon" aria-hidden="true">📄</span>
+        Download Media Pack
+      </button>
     </a>
-
-    <button class="btn" onclick="toggleModal()">Contact Us</button>
+    <button class="btn" onclick="toggleModal()" aria-label="Contact us">
+      <span class="btn-icon" aria-hidden="true">💬</span>
+      Contact Us
+    </button>
   </div>
 
-  <div class="modal" id="contactModal">
-    <button class="close-btn" onclick="toggleModal()">&times;</button>
-    <a href="tel:+441414591053"><button class="btn">Give us a Call</button></a>
-    <a href="mailto:info@glasgowbydrone.co.uk"><button class="btn">Drop us an Email</button></a>
-    <a href="https://instagram.com/glasgowbydroneofficial" target="_blank"><button class="btn">Visit our Instagram</button></a>
+  <div class="modal" id="contactModal" tabindex="-1" aria-modal="true">
+    <button class="close-btn" onclick="toggleModal()" aria-label="Close Contact Options">&times;</button>
+    <div class="contact-group">
+      <a href="tel:+441414591053" style="width:100%;" tabindex="0">
+        <button class="contact-btn">
+          <span class="btn-icon" aria-hidden="true">📞</span>
+          Call: +44 141 459 1053
+        </button>
+      </a>
+      <a href="mailto:info@glasgowbydrone.co.uk" style="width:100%;" tabindex="0">
+        <button class="contact-btn">
+          <span class="btn-icon" aria-hidden="true">✉️</span>
+          Email: info@glasgowbydrone.co.uk
+        </button>
+      </a>
+      <a href="https://instagram.com/glasgowbydroneofficial" target="_blank" rel="noopener" style="width:100%;" tabindex="0">
+        <button class="contact-btn">
+          <span class="btn-icon" aria-hidden="true">📸</span>
+          Instagram @glasgowbydroneofficial
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Glasgow by Drone &mdash; Premium Drone Photography, Videography & Inspections, Scotland
   </div>
 
   <script>
+    // Modal open/close logic with keyboard accessibility
     function toggleModal() {
       const modal = document.getElementById('contactModal');
-      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+      if (modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      } else {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+      }
     }
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('contactModal');
+      if (modal.style.display === 'flex' && (e.key === "Escape" || e.key === "Esc")) {
+        toggleModal();
+      }
+    });
+    // Prevent background scroll when modal open
+    document.getElementById('contactModal').addEventListener('wheel', function(e) {
+      if (this.style.display === 'flex') e.preventDefault();
+    }, { passive: false });
   </script>
 
 </body>
