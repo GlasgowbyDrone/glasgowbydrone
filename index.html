@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glasgow by Drone | Business Pack</title>
 
-  <!-- 🔍 SEO + Social Sharing -->
+  <!-- SEO + Social Meta -->
   <meta name="description" content="Download the business pack for Glasgow by Drone — premium aerial photography and cinematic drone services in the UK.">
   <meta property="og:title" content="Glasgow by Drone | Business Pack" />
   <meta property="og:description" content="Premium drone visuals and inspection services. Download our business pack now." />
@@ -13,141 +13,127 @@
   <meta property="og:url" content="https://glasgowbydrone.github.io/glasgowbydrone/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- 🌐 Favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     html, body {
       height: 100%;
       font-family: Arial, sans-serif;
       overflow: hidden;
       background: black;
+      color: white;
     }
 
     .video-background {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
-      height: 56.25vw;
-      min-height: 100vh;
-      min-width: 177.77vh;
+      height: 100vh;
       z-index: -1;
-    }
-
-    .video-background iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      overflow: hidden;
       pointer-events: none;
     }
 
-    .overlay {
-      background: rgba(0,0,0,0.6);
-      height: 100%;
-      width: 100%;
+    .video-background iframe {
+      width: 177.77vh; /* 100 * (16/9) */
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .content {
+      position: relative;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      padding: 0 1rem;
+      z-index: 1;
     }
 
     .logo {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 160px;
+      margin-bottom: 1.5rem;
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: #fff;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.2rem;
     }
 
-    a.button {
+    .btn {
       display: inline-block;
-      background-color: #4201B6;
+      background: #6a00ff;
       color: white;
-      padding: 14px 30px;
-      font-size: 18px;
+      padding: 0.75rem 1.5rem;
       border-radius: 8px;
-      margin: 20px 0;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(66, 1, 182, 0.3);
+      font-size: 1rem;
+      margin: 0.5rem;
+      transition: background 0.3s ease;
     }
 
-    a.button:hover {
-      background-color: #320191;
-      transform: scale(1.05);
+    .btn:hover {
+      background: #4e00b3;
     }
 
-    form {
-      margin-top: 10px;
-    }
-
-    .footer {
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
       color: #ccc;
-      font-size: 14px;
-      margin-top: 20px;
-    }
-
-    .footer a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 1.6rem; }
-      .logo { max-width: 140px; }
-      a.button { font-size: 16px; padding: 12px 24px; }
+      h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔁 YouTube Background -->
+  <!-- YouTube Background -->
   <div class="video-background">
-    <iframe
-      src="https://www.youtube.com/embed/3agNNY7xwZA?autoplay=1&mute=1&loop=1&playlist=3agNNY7xwZA&controls=0&modestbranding=1&showinfo=0&rel=0"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen
-    ></iframe>
+    <iframe 
+      src="https://www.youtube.com/embed/3agNNY7xwZA?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=3agNNY7xwZA&modestbranding=1&rel=0" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <div class="overlay">
+  <!-- Main Content -->
+  <div class="content">
     <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
     <h1>Business Pack</h1>
-    <a href="business_pack.pdf" class="button" download>📄 Download PDF</a>
-
-    <!-- ✉️ Contact Form -->
-    <form action="mailto:info@glasgowbydrone.co.uk" method="GET">
-      <input type="hidden" name="subject" value="Enquiry via Business Pack Page" />
-      <button type="submit" class="button">📧 Contact Us</button>
-    </form>
-
-    <div class="footer">
-      <a href="https://instagram.com/glasgowbydroneofficial" target="_blank">@glasgowbydroneofficial</a>
-      |
-      <a href="mailto:info@glasgowbydrone.co.uk">info@glasgowbydrone.co.uk</a>
-    </div>
+    <a href="business_pack.pdf" class="btn" download>📄 Download PDF</a>
+    <a href="mailto:info@glasgowbydrone.co.uk" class="btn">✉️ Contact Us</a>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    @glasgowbydroneofficial &nbsp; | &nbsp; info@glasgowbydrone.co.uk
+  </footer>
 
 </body>
 </html>
