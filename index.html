@@ -26,41 +26,13 @@
     html, body {
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden;
       background: black;
       color: white;
-    }
-
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .video-background iframe {
-      width: 177.77vh; /* 100 * (16/9) */
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .content {
-      position: relative;
-      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       text-align: center;
-      padding: 0 1rem;
-      z-index: 1;
     }
 
     .logo {
@@ -91,10 +63,7 @@
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
+      margin-top: 2rem;
       font-size: 0.85rem;
       color: #ccc;
     }
@@ -112,23 +81,11 @@
 </head>
 <body>
 
-  <!-- YouTube Background -->
-  <div class="video-background">
-    <iframe 
-      src="https://www.youtube.com/embed/3agNNY7xwZA?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=3agNNY7xwZA&modestbranding=1&rel=0" 
-      frameborder="0" 
-      allow="autoplay; encrypted-media" 
-      allowfullscreen>
-    </iframe>
-  </div>
-
   <!-- Main Content -->
-  <div class="content">
-    <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
-    <h1>Business Pack</h1>
-    <a href="business_pack.pdf" class="btn" download>📄 Download PDF</a>
-    <a href="mailto:info@glasgowbydrone.co.uk" class="btn">✉️ Contact Us</a>
-  </div>
+  <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
+  <h1>Business Pack</h1>
+  <a href="business_pack.pdf" class="btn" download>📄 Download PDF</a>
+  <a href="mailto:info@glasgowbydrone.co.uk" class="btn">✉️ Contact Us</a>
 
   <!-- Footer -->
   <footer>
