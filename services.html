@@ -9,198 +9,126 @@
   <meta property="og:description" content="Browse Glasgow by Drone’s drone services including roof inspections, cinematic video, creative campaigns and more." />
   <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
-    :root {
-      --primary: #6C2BD9;
-      --accent: #FF01B6;
-      --card-bg: rgba(0,0,0,0.69);
-      --white: #fff;
-      --gray: #f2f2f2;
+    :root{
+      --primary:#6C2BD9;--accent:#FF01B6;
+      --card-bg:rgba(0,0,0,.69);--white:#fff;--gray:#f2f2f2;
     }
-    /* Header styles (reuse on all pages) */
-    .main-header {
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(30, 11, 39, 0.92);
-      z-index: 999;
-      box-shadow: 0 2px 24px 0 rgba(44,0,44,0.11);
-      padding: 0;
+
+    /* ---------- FIXED HEADER ---------- */
+    .main-header{
+      width:100vw;position:fixed;top:0;left:0;z-index:999;
+      background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
     }
-    .header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
+    .header-inner{
+      width:100%;padding:0 18px;display:flex;gap:16px;align-items:center;
+      height:76px;box-sizing:border-box
     }
-    .header-logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
+    .header-logo{width:65px;transition:transform .23s}
+    .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
+    .header-nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+    .nav-link{
+      color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
+      padding:7px 16px;border-radius:8px;text-decoration:none;white-space:nowrap;
+      transition:background .15s,opacity .15s
     }
-    .header-logo {
-      width: 65px;
-      height: auto;
-      margin: 0;
-      display: block;
-      transition: transform 0.23s;
+    .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
+
+    @media(max-width:900px){.header-nav{gap:12px}}
+    @media(max-width:700px){
+      .header-inner{height:60px;padding:0 6px}
+      .header-logo{width:44px}
+      .nav-link{font-size:.95rem;padding:6px 10px}
     }
-    .header-logo-link:hover .header-logo { transform: scale(1.07) rotate(-2deg);}
-    .header-nav {
-      display: flex;
-      gap: 16px;
+
+    /* ---------- PAGE LAYOUT ---------- */
+    body{
+      min-height:100vh;margin:0;padding-top:76px;
+      background:var(--primary);color:var(--white);
+      font-family:Arial,Helvetica,sans-serif;
+      display:flex;flex-direction:column;align-items:center
     }
-    .nav-link {
-      color: #fff;
-      font-size: 1.03rem;
-      font-weight: bold;
-      opacity: 0.9;
-      text-decoration: none;
-      background: none;
-      padding: 7px 16px;
-      border-radius: 8px;
-      transition: background 0.15s, opacity 0.15s;
-      position: relative;
+    @media(max-width:700px){body{padding-top:62px}}
+
+    .services-container{
+      width:100%;max-width:800px;margin:54px auto 0;
+      background:var(--card-bg);border-radius:19px;
+      padding:2rem 1rem;box-shadow:0 6px 32px rgba(30,0,40,.10);
+      text-align:center
     }
-    .nav-link.active, .nav-link:hover {
-      background: rgba(255, 1, 182, 0.16);
-      opacity: 1;
+    h1{font-size:2.2rem;font-weight:900;margin-bottom:1.3rem}
+
+    /* ---------- SERVICE CARDS ---------- */
+    .services-list{
+      display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:30px
     }
-    @media (max-width: 700px) {
-      .header-inner { height: 60px; padding: 0 6px; }
-      .header-logo { width: 44px;}
-      .header-nav { gap: 8px;}
-      .nav-link { font-size: .99rem; padding: 7px 7px;}
+    .service-card{
+      background:rgba(255,255,255,.09);border-radius:12px;
+      flex:1 1 240px;max-width:330px;min-width:210px;
+      padding:1.2rem 1.3rem;color:var(--white);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      min-height:170px;font-size:1.08rem;box-shadow:0 1px 7px rgba(40,0,60,.06);
+      transition:transform .14s
     }
-    body {
-      min-height: 100vh;
-      background: var(--primary);
-      color: var(--white);
-      font-family: Arial, sans-serif;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      padding-top: 76px;
-    }
-    @media (max-width: 700px) {
-      body { padding-top: 62px;}
-    }
-    .services-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 54px auto 0 auto;
-      padding: 2rem 1rem 2rem 1rem;
-      background: var(--card-bg);
-      border-radius: 19px;
-      box-shadow: 0 6px 32px 0 rgba(30,0,40,0.10);
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1.3rem;
-      font-weight: 900;
-      color: var(--white);
-    }
-    .services-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 0;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.09);
-      border-radius: 12px;
-      flex: 1 1 240px;
-      max-width: 330px;
-      min-width: 210px;
-      padding: 1.2rem 1.3rem;
-      margin: 0 auto;
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 170px;
-      box-shadow: 0 1px 7px 0 rgba(40,0,60,0.06);
-      font-size: 1.08rem;
-      transition: transform 0.14s;
-    }
-    .service-card:hover {
-      transform: scale(1.02) translateY(-4px);
-    }
-    .service-title {
-      font-size: 1.14rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.48rem;
-      text-align: center;
-    }
-    .service-desc {
-      font-size: 1.01rem;
-      color: var(--gray);
-      margin-bottom: 0;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
-    @media (max-width: 920px) {
-      .services-list { gap: 18px;}
-    }
-    @media (max-width: 680px) {
-      .services-container { padding: 1rem 0.3rem; margin-top: 23px;}
-      h1 { font-size: 1.22rem; }
-      .services-list { gap: 12px;}
-      .service-card { min-width: 93vw; max-width: 99vw; font-size: 1.00rem; padding: 1rem 0.8rem;}
+    .service-card:hover{transform:scale(1.02) translateY(-4px)}
+    .service-title{font-size:1.14rem;font-weight:700;color:var(--accent);margin-bottom:.48rem;text-align:center}
+    .service-desc{font-size:1.01rem;color:var(--gray);text-align:center}
+
+    @media(max-width:920px){.services-list{gap:18px}}
+    @media(max-width:680px){
+      .services-container{padding:1rem .3rem;margin-top:23px}
+      h1{font-size:1.22rem}.services-list{gap:12px}
+      .service-card{min-width:93vw;max-width:99vw;font-size:1rem;padding:1rem .8rem}
     }
   </style>
 </head>
 <body>
+
   <header class="main-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo-link">
-        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo" />
+        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
+
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link active">Services</a>
+        <a href="index.html"   class="nav-link">Home</a>
+        <a href="about.html"   class="nav-link">About</a>
+        <a href="services.html"class="nav-link active">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
+
   <main class="services-container">
     <h1>Our Drone Services</h1>
+
     <div class="services-list">
       <div class="service-card">
         <div class="service-title">Aerial Photography</div>
         <div class="service-desc">Stunning stills for real estate, marketing, tourism, and creative campaigns.</div>
       </div>
+
       <div class="service-card">
         <div class="service-title">Drone Videography</div>
         <div class="service-desc">Cinematic footage in up to 4K HDR, including events, promos, and travel films.</div>
       </div>
+
       <div class="service-card">
         <div class="service-title">FPV Cinematic</div>
         <div class="service-desc">Dynamic, immersive flights for commercial, creative, and sports content.</div>
       </div>
+
       <div class="service-card">
-        <div class="service-title">Roof & Building Inspections</div>
+        <div class="service-title">Roof &amp; Building Inspections</div>
         <div class="service-desc">Safe, high-res surveys for property, insurance, and maintenance checks.</div>
       </div>
+
       <div class="service-card">
         <div class="service-title">Construction Progress</div>
         <div class="service-desc">Monitor site progress with regular aerial updates and timelapses.</div>
       </div>
+
       <div class="service-card">
         <div class="service-title">Custom Projects</div>
         <div class="service-desc">Have a unique project? We offer tailored drone solutions across Scotland.</div>

@@ -9,194 +9,116 @@
   <meta property="og:description" content="Meet the team behind Glasgow by Drone, offering premium drone footage, roof inspections, and more across Scotland." />
   <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
-    :root {
-      --primary: #6C2BD9;
-      --accent: #FF01B6;
-      --background: #21183c;
-      --white: #fff;
-      --gray: #f2f2f2;
-      --card-bg: rgba(0,0,0,0.70);
+    :root{
+      --primary:#6C2BD9;--accent:#FF01B6;
+      --card-bg:rgba(0,0,0,.70);--white:#fff;--gray:#f2f2f2;
     }
-    /* Header styles (reuse on all pages) */
-    .main-header {
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(30, 11, 39, 0.92);
-      z-index: 999;
-      box-shadow: 0 2px 24px 0 rgba(44,0,44,0.11);
-      padding: 0;
+
+    /* ---------- FIXED HEADER ---------- */
+    .main-header{
+      width:100vw;position:fixed;top:0;left:0;z-index:999;
+      background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
     }
-    .header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
+    .header-inner{
+      width:100%;padding:0 18px;display:flex;gap:16px;align-items:center;
+      height:76px;box-sizing:border-box      /* ensures no overflow */
     }
-    .header-logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
+    .header-logo{width:65px;transition:transform .23s}
+    .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
+    .header-nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+    .nav-link{
+      color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
+      padding:7px 16px;border-radius:8px;text-decoration:none;
+      transition:background .15s,opacity .15s;white-space:nowrap
     }
-    .header-logo {
-      width: 65px;
-      height: auto;
-      margin: 0;
-      display: block;
-      transition: transform 0.23s;
+    .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
+
+    @media(max-width:900px){.header-nav{gap:12px}}
+    @media(max-width:700px){
+      .header-inner{height:60px;padding:0 6px}
+      .header-logo{width:44px}
+      .nav-link{font-size:.95rem;padding:6px 10px}
     }
-    .header-logo-link:hover .header-logo { transform: scale(1.07) rotate(-2deg);}
-    .header-nav {
-      display: flex;
-      gap: 16px;
+
+    /* ---------- PAGE LAYOUT ---------- */
+    body{
+      min-height:100vh;margin:0;padding-top:76px;
+      display:flex;flex-direction:column;align-items:center;
+      background:var(--primary);color:var(--white);font-family:Arial,Helvetica,sans-serif
     }
-    .nav-link {
-      color: #fff;
-      font-size: 1.03rem;
-      font-weight: bold;
-      opacity: 0.9;
-      text-decoration: none;
-      background: none;
-      padding: 7px 16px;
-      border-radius: 8px;
-      transition: background 0.15s, opacity 0.15s;
-      position: relative;
+    @media(max-width:700px){body{padding-top:62px}}
+
+    .about-container{
+      width:100%;max-width:520px;margin:60px auto 0;
+      background:var(--card-bg);border-radius:18px;
+      padding:2.5rem 2rem 2rem;box-shadow:0 6px 32px rgba(30,0,40,.12);
+      text-align:center;animation:fadeInUp .8s cubic-bezier(.7,1.7,.6,.97) .1s both
     }
-    .nav-link.active, .nav-link:hover {
-      background: rgba(255, 1, 182, 0.16);
-      opacity: 1;
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+
+    h1{font-size:2.3rem;font-weight:900;margin-bottom:1rem}
+    .about-highlight{color:var(--accent);font-weight:700}
+    p{font-size:1.1rem;line-height:1.7;color:var(--gray);margin-bottom:1.2rem}
+
+    .team-section{margin-top:2.2rem;display:flex;flex-direction:column;gap:1.2rem;align-items:center}
+    .team-card{
+      background:rgba(255,255,255,.08);border-radius:12px;
+      padding:1.1rem 1.4rem;width:90%;max-width:340px;
+      color:var(--white);font-size:1.08rem;box-shadow:0 1px 7px rgba(40,0,60,.05)
     }
-    @media (max-width: 700px) {
-      .header-inner { height: 60px; padding: 0 6px; }
-      .header-logo { width: 44px;}
-      .header-nav { gap: 8px;}
-      .nav-link { font-size: .99rem; padding: 7px 7px;}
+
+    .cta-btn{
+      display:inline-block;margin-top:2rem;padding:14px 42px;
+      background:var(--accent);color:#fff;border:none;border-radius:10px;
+      font-size:1.06rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;
+      box-shadow:0 3px 18px rgba(255,0,182,.11);transition:background .22s,transform .14s
     }
-    body {
-      min-height: 100vh;
-      background: var(--primary);
-      color: var(--white);
-      font-family: Arial, sans-serif;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      padding-top: 76px;
-    }
-    @media (max-width: 700px) {
-      body { padding-top: 62px;}
-    }
-    .about-container {
-      width: 100%;
-      max-width: 520px;
-      margin: 60px auto 0 auto;
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 2.5rem 2rem 2rem 2rem;
-      box-shadow: 0 6px 32px 0 rgba(30,0,40,0.12);
-      text-align: center;
-      animation: fadeInUp 0.8s cubic-bezier(.7,1.7,.6,.97) 0.1s both;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px);}
-      to   { opacity: 1; transform: translateY(0);}
-    }
-    h1 {
-      font-size: 2.3rem;
-      letter-spacing: 1px;
-      margin-bottom: 1rem;
-      font-weight: 900;
-      color: var(--white);
-    }
-    .about-highlight {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--gray);
-      margin-bottom: 1.2rem;
-    }
-    .team-section {
-      margin-top: 2.2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .team-card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 1.1rem 1.4rem;
-      width: 90%;
-      max-width: 340px;
-      margin: 0 auto;
-      color: var(--white);
-      font-size: 1.08rem;
-      box-shadow: 0 1px 7px 0 rgba(40,0,60,0.05);
-    }
-    .cta-btn {
-      display: inline-block;
-      margin: 2rem 0 0 0;
-      padding: 14px 42px;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.06rem;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      box-shadow: 0 3px 18px 0 rgba(255,0,182,0.11);
-      cursor: pointer;
-      transition: background 0.22s, transform 0.14s;
-    }
-    .cta-btn:hover {
-      background: #5022a5;
-      transform: translateY(-2px) scale(1.03);
-    }
-    @media (max-width: 680px) {
-      .about-container { margin: 32px 0 0 0; padding: 1.3rem 0.8rem; }
-      .team-card { font-size: 0.98rem; }
-      h1 { font-size: 1.42rem; }
+    .cta-btn:hover{background:#5022a5;transform:translateY(-2px) scale(1.03)}
+
+    @media(max-width:680px){
+      .about-container{margin:32px 0 0;padding:1.3rem .8rem}
+      h1{font-size:1.42rem}.team-card{font-size:.98rem}
     }
   </style>
 </head>
 <body>
+
   <header class="main-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo-link">
-        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo" />
+        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
+
       <nav class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html"   class="nav-link">Home</a>
+        <a href="about.html"   class="nav-link active">About</a>
+        <a href="services.html"class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
+
   <main class="about-container">
     <h1>About <span class="about-highlight">Glasgow by Drone</span></h1>
     <p>
-      Glasgow by Drone is a leading provider of <b>cinematic drone videography, aerial photography, FPV footage, and roof inspections</b> across Scotland.
-      <br><br>
-      We combine years of experience, <span class="about-highlight">CAA-certified pilots</span>, and industry-leading equipment to deliver stunning perspectives for creative, commercial, and technical projects. Our work covers everything from property marketing and events to construction, inspections, and travel films.
+      Glasgow by Drone is a leading provider of <b>cinematic drone videography, aerial photography,
+      FPV footage, and roof inspections</b> across Scotland.<br><br>
+      We combine years of experience, <span class="about-highlight">CAA-certified pilots</span>,
+      and industry-leading equipment to deliver stunning perspectives for creative, commercial, and
+      technical projects. Our work covers everything from property marketing and events to construction,
+      inspections, and travel films.
     </p>
+
     <section class="team-section">
       <div class="team-card">
         <b>Ryan Murphy</b><br>
-        Founder & Remote Pilot<br>
-        Licensed drone operator, creative lead, and perfectionist behind the lens.
+        Founder &amp; Remote Pilot<br>
+        Licensed Remote Pilot, creative lead, and perfectionist behind the lens.
       </div>
     </section>
+
     <a href="services.html" class="cta-btn">Explore Our Services</a>
   </main>
 </body>

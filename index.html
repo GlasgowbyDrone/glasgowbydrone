@@ -4,213 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Glasgow by Drone | Drone Photography & Videography Scotland</title>
+
   <!-- SEO -->
-  <meta name="description" content="Glasgow by Drone provides cinematic drone footage, aerial photography, and roof inspections across Glasgow and Scotland. Download our media pack and get in touch today.">
-  <meta name="keywords" content="Glasgow drone services, drone Glasgow, aerial photography Glasgow, drone inspection Scotland, drone videography, drone operator Glasgow, drone roof inspection, drone filming Scotland, cinematic drone Glasgow, FPV drone UK, drone services Scotland">
-  <meta property="og:title" content="Glasgow by Drone | Premium Drone Services Scotland" />
-  <meta property="og:description" content="Cinematic aerial photography, FPV video, and drone inspections in Glasgow and across Scotland. Trusted drone operator for commercial and creative work." />
-  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
-  <meta property="og:url" content="https://glasgowbydrone.github.io/glasgowbydrone/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Glasgow by Drone | Aerial Photography & Videography" />
-  <meta name="twitter:description" content="Explore our premium drone footage and inspection services across Glasgow and Scotland.">
-  <meta name="twitter:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta name="description" content="Glasgow by Drone provides cinematic drone footage, aerial photography, and roof inspections across Glasgow and Scotland.">
+  <meta name="keywords"    content="Glasgow drone services, drone Glasgow, aerial photography Glasgow, drone videography Scotland, FPV drone UK">
+  <meta property="og:title"       content="Glasgow by Drone | Premium Drone Services Scotland" />
+  <meta property="og:description" content="Cinematic aerial photography, FPV video, and drone inspections in Glasgow and across Scotland." />
+  <meta property="og:image"       content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta property="og:url"         content="https://glasgowbydrone.github.io/glasgowbydrone/" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
-    :root {
-      --primary: #6C2BD9;
-      --accent: #FF01B6;
-      --accent-dark: #5022a5;
-      --bg1: #1b093a;
-      --bg2: #321165;
-    }
-    /* Header styles (reuse on all pages) */
-    .main-header {
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(30, 11, 39, 0.92);
-      z-index: 999;
-      box-shadow: 0 2px 24px 0 rgba(44,0,44,0.11);
-      padding: 0;
-    }
-    .header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-    }
-    .header-logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .header-logo {
-      width: 65px;
-      height: auto;
-      margin: 0;
-      display: block;
-      transition: transform 0.23s;
-    }
-    .header-logo-link:hover .header-logo { transform: scale(1.07) rotate(-2deg);}
-    .header-nav {
-      display: flex;
-      gap: 16px;
-    }
-    .nav-link {
-      color: #fff;
-      font-size: 1.03rem;
-      font-weight: bold;
-      opacity: 0.9;
-      text-decoration: none;
-      background: none;
-      padding: 7px 16px;
-      border-radius: 8px;
-      transition: background 0.15s, opacity 0.15s;
-      position: relative;
-    }
-    .nav-link.active, .nav-link:hover {
-      background: rgba(255, 1, 182, 0.16);
-      opacity: 1;
-    }
-    @media (max-width: 700px) {
-      .header-inner { height: 60px; padding: 0 6px; }
-      .header-logo { width: 44px;}
-      .header-nav { gap: 8px;}
-      .nav-link { font-size: .99rem; padding: 7px 7px;}
-    }
-    body {
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-      background: var(--primary);
-      color: #fff;
-      overflow: hidden;
-      padding-top: 76px;
-    }
-    @media (max-width: 700px) {
-      body { padding-top: 62px;}
+    :root{
+      --primary:#6C2BD9;--accent:#FF01B6;--accent-dark:#5022a5;
     }
 
-    #intro {
-      position: fixed;
-      z-index: 10000;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity .8s cubic-bezier(.5,1.1,.7,1);
-      opacity: 1;
-      pointer-events: all;
+    /* ---------- FIXED HEADER ---------- */
+    .main-header{
+      width:100vw;position:fixed;top:0;left:0;z-index:999;
+      background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
     }
-    #intro.hide {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .8s cubic-bezier(.65,1.2,.5,1.08);
+    .header-inner{
+      width:100%;padding:0 18px;display:flex;gap:16px;align-items:center;
+      height:76px;box-sizing:border-box
     }
-    #intro .intro-logo {
-      width: clamp(180px, 25vw, 330px);
-      opacity: 0;
-      transform: scale(.82);
-      animation: introLogoAnim 1.1s cubic-bezier(.27,1.2,.7,1.03) .15s forwards;
-      filter: drop-shadow(0 6px 36px rgba(255,0,180,0.11));
+    .header-logo{width:65px;transition:transform .23s}
+    .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
+    .header-nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+    .nav-link{
+      color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
+      padding:7px 16px;border-radius:8px;text-decoration:none;white-space:nowrap;
+      transition:background .15s,opacity .15s
     }
-    @keyframes introLogoAnim {
-      0% { opacity: 0; transform: scale(.82) rotate(-7deg);}
-      80% { opacity: 1; transform: scale(1.07) rotate(1.5deg);}
-      100% { opacity: 1; transform: scale(1) rotate(0);}
+    .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
+
+    @media(max-width:900px){.header-nav{gap:12px}}
+    @media(max-width:700px){
+      .header-inner{height:60px;padding:0 6px}
+      .header-logo{width:44px}
+      .nav-link{font-size:.95rem;padding:6px 10px}
     }
 
-    #main-content {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .7s cubic-bezier(.5,1.15,.7,1.08);
-      min-height: 100vh;
-      min-width: 100vw;
+    /* ---------- PAGE LAYOUT ---------- */
+    body{
+      height:100vh;margin:0;padding-top:76px;
+      background:var(--primary);color:#fff;font-family:'Arial Rounded MT Bold',Arial,sans-serif;
+      overflow:hidden
     }
-    #main-content.visible {
-      opacity: 1;
-      pointer-events: all;
-      transition: opacity .8s cubic-bezier(.4,1.13,.6,1.09);
+    @media(max-width:700px){body{padding-top:62px}}
+
+    /* ---------- INTRO / TRANSITION ---------- */
+    #intro{
+      position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10000;
+      background:#000;display:flex;justify-content:center;align-items:center;
+      opacity:1;pointer-events:all;transition:opacity .8s cubic-bezier(.5,1.1,.7,1)
+    }
+    #intro.hide{opacity:0;pointer-events:none;transition:opacity .8s cubic-bezier(.65,1.2,.5,1.08)}
+    #intro .intro-logo{
+      width:clamp(180px,25vw,330px);opacity:0;transform:scale(.82);
+      filter:drop-shadow(0 6px 36px rgba(255,0,180,.11));
+      animation:introLogoAnim 1.1s cubic-bezier(.27,1.2,.7,1.03) .15s forwards
+    }
+    @keyframes introLogoAnim{
+      0%{opacity:0;transform:scale(.82) rotate(-7deg)}
+      80%{opacity:1;transform:scale(1.07) rotate(1.5deg)}
+      100%{opacity:1;transform:scale(1) rotate(0)}
     }
 
-    #bg-video {
-      position: fixed;
-      z-index: 0;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      object-fit: cover;
-      filter: brightness(.59) blur(0.5px);
-      pointer-events: none;
-      background: #1b093a;
+    #main-content{opacity:0;pointer-events:none;transition:opacity .7s cubic-bezier(.5,1.15,.7,1.08)}
+    #main-content.visible{opacity:1;pointer-events:all;transition:opacity .8s cubic-bezier(.4,1.13,.6,1.09)}
+
+    /* ---------- HERO ---------- */
+    #bg-video{
+      position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;
+      filter:brightness(.59) blur(.5px);pointer-events:none;background:#1b093a;z-index:0
     }
-    .logo-container {
-      margin-top: 4vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      height: 80vh;
+    .logo-container{
+      margin-top:4vh;height:80vh;display:flex;justify-content:center;align-items:center;width:100vw
     }
-    .logo {
-      width: clamp(190px, 30vw, 410px);
-      max-width: 97vw;
-      filter: drop-shadow(0 4px 18px rgba(0,0,0,0.15));
-      transition: transform 0.3s cubic-bezier(.65,1.2,.6,1);
-      background: transparent;
-      margin: 0 auto;
-      display: block;
+    .logo{
+      width:clamp(190px,30vw,410px);max-width:97vw;
+      filter:drop-shadow(0 4px 18px rgba(0,0,0,.15));
+      transition:transform .3s cubic-bezier(.65,1.2,.6,1)
     }
-    .logo:hover { transform: scale(1.06) rotate(2deg); }
-    @media (max-width: 700px) {
-      .logo-container { margin-top: 9vh; height: 69vh;}
-      .logo { width: clamp(120px, 45vw, 210px);}
+    .logo:hover{transform:scale(1.06) rotate(2deg)}
+
+    @media(max-width:700px){
+      .logo-container{margin-top:9vh;height:69vh}
+      .logo{width:clamp(120px,45vw,210px)}
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header class="main-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo-link">
-        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo" />
+        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
+
       <nav class="header-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html"   class="nav-link active">Home</a>
+        <a href="about.html"   class="nav-link">About</a>
+        <a href="services.html"class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Landing/Intro Page -->
+  <!-- Intro splash -->
   <div id="intro">
-    <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="intro-logo" />
+    <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="intro-logo">
   </div>
 
-  <!-- Main Page (hidden initially) -->
+  <!-- Main content -->
   <div id="main-content">
     <video id="bg-video" src="website_background.mp4" autoplay loop muted playsinline></video>
+
     <div class="logo-container">
-      <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo" />
+      <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="logo">
     </div>
   </div>
+
   <script>
-    // Intro → Main page logic
-    setTimeout(() => {
+    /* fade intro out, then show main */
+    setTimeout(()=>{
       document.getElementById('intro').classList.add('hide');
-      setTimeout(() => {
-        document.getElementById('intro').style.display = 'none';
+      setTimeout(()=>{
+        document.getElementById('intro').style.display='none';
         document.getElementById('main-content').classList.add('visible');
-      }, 900);
-    }, 2000);
+      },900);
+    },2000);
   </script>
 </body>
 </html>
