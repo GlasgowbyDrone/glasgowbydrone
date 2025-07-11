@@ -217,6 +217,42 @@
       background-color: rgba(255, 1, 182, 1);
       transform: scale(1.1);
     }
+
+    .video-gallery {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--white);
+}
+
+.video-gallery h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
   </style>
 </head>
 <body>
@@ -257,6 +293,34 @@
     </section>
 
     <a href="services.html" class="cta-btn">Explore Our Services</a>
+
+    <!-- Add this just above the closing </main> tag -->
+
+<section class="video-gallery">
+  <h2 style="margin-top: 3rem;">Featured Aerial Videos</h2>
+  <div class="video-grid">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/XlKo1qFsOpQ" title="Liverpool Albert Docks" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/3agNNY7xwZA?rel=0&modestbranding=1&controls=1"
+        title="Your Video Title"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/PJK7k8RsoNI" title="Glasgow Clyde Side" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/7ED1EbuuuCk" title="Los Angeles Drone Footage" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Scroll-to-top button -->
