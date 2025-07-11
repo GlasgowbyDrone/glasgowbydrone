@@ -18,6 +18,10 @@
       --card-bg: rgba(0,0,0,0.68);
       --white: #fff;
       --gray: #f2f2f2;
+      --call-green: #34C759;
+      --email-orange: #FF9500;
+      --youtube-red: #FF0000;
+      --insta-gradient: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
     body {
       min-height: 100vh;
@@ -99,7 +103,7 @@
     }
     .contact-link {
       background: #fff;
-      color: var(--primary);
+      color: var(--primary) !important;
       border-radius: 11px;
       padding: 13px 0 13px 0;
       font-weight: bold;
@@ -110,14 +114,44 @@
       align-items: center;
       justify-content: center;
       gap: 13px;
-      transition: background 0.17s, color 0.17s, transform 0.12s;
       text-decoration: none !important;
+      cursor: pointer;
+      transition: background 0.19s, color 0.19s, transform 0.12s;
+      border: none;
     }
-    .contact-link:hover, .contact-link:focus {
-      background: var(--accent);
-      color: #fff;
-      transform: scale(1.03) translateY(-1px);
+    .contact-link svg {
+      display: inline-block;
+      vertical-align: middle;
+      height: 22px;
+      width: 22px;
+      margin-right: 7px;
+      margin-left: -2px;
     }
+    /* --- Flash Animation for Buttons --- */
+    @keyframes flash-green {
+      0% { background: #fff; color: var(--primary);}
+      30% { background: var(--call-green); color: #fff;}
+      100% { background: #fff; color: var(--primary);}
+    }
+    @keyframes flash-orange {
+      0% { background: #fff; color: var(--primary);}
+      30% { background: var(--email-orange); color: #fff;}
+      100% { background: #fff; color: var(--primary);}
+    }
+    @keyframes flash-red {
+      0% { background: #fff; color: var(--primary);}
+      30% { background: var(--youtube-red); color: #fff;}
+      100% { background: #fff; color: var(--primary);}
+    }
+    @keyframes flash-insta {
+      0% { background: #fff; color: var(--primary);}
+      30% { background: var(--insta-gradient); color: #fff;}
+      100% { background: #fff; color: var(--primary);}
+    }
+    .flash-green { animation: flash-green 1s cubic-bezier(.7,1.1,.7,1.05); }
+    .flash-orange { animation: flash-orange 1s cubic-bezier(.7,1.1,.7,1.05); }
+    .flash-red { animation: flash-red 1s cubic-bezier(.7,1.1,.7,1.05); }
+    .flash-insta { animation: flash-insta 1s cubic-bezier(.7,1.1,.7,1.05); }
     /* --- FORM --- */
     form {
       margin-top: 8px;
@@ -175,6 +209,7 @@
       .logo-top { width: 75px; margin-top: 12px; }
       h1 { font-size: 1.25rem; }
       .footer { font-size: 0.93rem;}
+      .contact-link svg { height: 18px; width: 18px; margin-right: 5px; }
     }
   </style>
 </head>
@@ -189,14 +224,25 @@
   <main class="contact-container">
     <h1>Contact <span class="contact-highlight">Glasgow by Drone</span></h1>
     <div class="contact-options">
-      <a href="tel:+441414591053" class="contact-link" aria-label="Call Glasgow by Drone">
-        <span>📞</span> 0141 459 1053
+      <a href="tel:+441414591053" class="contact-link call" aria-label="Call Glasgow by Drone">
+        <!-- Phone SVG -->
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.79a15.053 15.053 0 0 0 6.61 6.61l2.2-2.2a1.1 1.1 0 0 1 1.08-.26 12.02 12.02 0 0 0 3.77.6 1.1 1.1 0 0 1 1.1 1.1v3.48a1.1 1.1 0 0 1-1.09 1.1A16.9 16.9 0 0 1 4.1 5.2 1.1 1.1 0 0 1 5.2 4.1h3.48A1.1 1.1 0 0 1 9.77 5.2c.06 1.28.24 2.53.6 3.77a1.1 1.1 0 0 1-.26 1.08l-2.2 2.2Z" stroke="#34C759" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Give us a call
       </a>
-      <a href="mailto:info@glasgowbydrone.co.uk" class="contact-link" aria-label="Email Glasgow by Drone">
-        <span>✉️</span> info@glasgowbydrone.co.uk
+      <a href="mailto:info@glasgowbydrone.co.uk" class="contact-link email" aria-label="Email Glasgow by Drone">
+        <!-- Mail SVG -->
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Z" stroke="#FF9500" stroke-width="1.5"/><path d="M5 7l7 6 7-6" stroke="#FF9500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Email Enquiries
       </a>
-      <a href="https://instagram.com/glasgowbydroneofficial" class="contact-link" target="_blank" rel="noopener" aria-label="Instagram">
-        <span>📸</span> @glasgowbydroneofficial
+      <a href="https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA" class="contact-link youtube" target="_blank" rel="noopener" aria-label="YouTube">
+        <!-- YouTube SVG -->
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6.5" width="19" height="11" rx="4" stroke="#FF0000" stroke-width="1.5"/><path d="M10.5 9.5v5l5-2.5-5-2.5Z" fill="#FF0000"/></svg>
+        Visit our YouTube
+      </a>
+      <a href="https://instagram.com/glasgowbydroneofficial" class="contact-link instagram" target="_blank" rel="noopener" aria-label="Instagram">
+        <!-- Instagram SVG -->
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#cc2366" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="#dc2743" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#f09433"/></svg>
+        Follow on Instagram
       </a>
     </div>
     <form action="mailto:info@glasgowbydrone.co.uk" method="POST" enctype="text/plain">
@@ -212,5 +258,40 @@
   <div class="footer">
     &copy; 2025 Glasgow by Drone
   </div>
+  <script>
+    // Add color flash effect to each contact button for 1s only, even if still hovered
+    document.querySelectorAll('.contact-link').forEach(function(link) {
+      let animClass = '';
+      if(link.classList.contains('call')) animClass = 'flash-green';
+      if(link.classList.contains('email')) animClass = 'flash-orange';
+      if(link.classList.contains('youtube')) animClass = 'flash-red';
+      if(link.classList.contains('instagram')) animClass = 'flash-insta';
+
+      link.addEventListener('mouseenter', function() {
+        if(animClass) {
+          link.classList.add(animClass);
+          setTimeout(function() {
+            link.classList.remove(animClass);
+          }, 1000);
+        }
+      });
+      // Also allow quick re-hover
+      link.addEventListener('mouseleave', function() {
+        if(animClass) link.classList.remove(animClass);
+      });
+      // For keyboard navigation
+      link.addEventListener('focus', function() {
+        if(animClass) {
+          link.classList.add(animClass);
+          setTimeout(function() {
+            link.classList.remove(animClass);
+          }, 1000);
+        }
+      });
+      link.addEventListener('blur', function() {
+        if(animClass) link.classList.remove(animClass);
+      });
+    });
+  </script>
 </body>
 </html>
