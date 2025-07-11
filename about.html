@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Glasgow by Drone</title>
+  <meta name="description" content="Learn about Glasgow by Drone — Scotland’s premier aerial photography and drone videography service. See why we’re trusted for creative and commercial work.">
+  <meta property="og:title" content="About | Glasgow by Drone" />
+  <meta property="og:description" content="Meet the team behind Glasgow by Drone, offering premium drone footage, roof inspections, and more across Scotland." />
+  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --background: #21183c;
+      --white: #fff;
+      --gray: #f2f2f2;
+      --card-bg: rgba(0,0,0,0.70);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--primary);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .logo-top {
+      width: 120px;
+      margin: 30px 0 0 0;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .logo-top:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    .about-container {
+      width: 100%;
+      max-width: 520px;
+      margin: 60px auto 0 auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 6px 32px 0 rgba(30,0,40,0.12);
+      text-align: center;
+      animation: fadeInUp 0.8s cubic-bezier(.7,1.7,.6,.97) 0.1s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .about-highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 1.2rem;
+    }
+    .team-section {
+      margin-top: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .team-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      width: 90%;
+      max-width: 340px;
+      margin: 0 auto;
+      color: var(--white);
+      font-size: 1.08rem;
+      box-shadow: 0 1px 7px 0 rgba(40,0,60,0.05);
+    }
+    .cta-btn {
+      display: inline-block;
+      margin: 2rem 0 0 0;
+      padding: 14px 42px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-size: 1.06rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      box-shadow: 0 3px 18px 0 rgba(255,0,182,0.11);
+      cursor: pointer;
+      transition: background 0.22s, transform 0.14s;
+    }
+    .cta-btn:hover {
+      background: #5022a5;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .nav-links {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      display: flex;
+      gap: 24px;
+    }
+    .nav-link {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 0.88;
+      text-decoration: none;
+      background: none;
+      padding: 4px 12px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .nav-link.active, .nav-link:hover {
+      background: rgba(255, 1, 182, 0.16);
+      opacity: 1;
+    }
+    @media (max-width: 680px) {
+      .about-container { margin: 32px 0 0 0; padding: 1.3rem 0.8rem; }
+      .logo-top { width: 80px; margin-top: 16px; }
+      .nav-links { top: 16px; right: 14px; gap: 13px; }
+      .team-card { font-size: 0.98rem; }
+      h1 { font-size: 1.42rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html"><img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" /></a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
+  <main class="about-container">
+    <h1>About <span class="about-highlight">Glasgow by Drone</span></h1>
+    <p>
+      Glasgow by Drone is a leading provider of <b>cinematic drone videography, aerial photography, FPV footage, and roof inspections</b> across Scotland.
+      <br><br>
+      We combine years of experience, <span class="about-highlight">CAA-certified pilots</span>, and industry-leading equipment to deliver stunning perspectives for creative, commercial, and technical projects. Our work covers everything from property marketing and events to construction, inspections, and travel films.
+    </p>
+    <section class="team-section">
+        <div class="team-card">
+          <div style="font-size:1.08rem;font-weight:900;margin-bottom:4px;">Ryan Murphy</div>
+          <div style="color:#FF01B6;font-weight:700;margin-bottom:7px;">Founder & Remote Pilot</div>
+          <div style="font-size:0.99rem;color:#f2f2f2;opacity:0.93;">
+            Licensed drone operator, creative lead, and perfectionist behind the lens.
+          </div>
+        </div>
+      </section>
+    <a href="services.html" class="cta-btn">Explore Our Services</a>
+  </main>
+</body>
+</html>
+  

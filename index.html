@@ -44,6 +44,34 @@
       color: inherit;
     }
 
+    /* --- NAVIGATION --- */
+    .nav-links {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      display: flex;
+      gap: 24px;
+      z-index: 99;
+    }
+    .nav-link {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 0.88;
+      text-decoration: none;
+      background: none;
+      padding: 4px 12px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .nav-link.active, .nav-link:hover {
+      background: rgba(255, 1, 182, 0.16);
+      opacity: 1;
+    }
+    @media (max-width: 680px) {
+      .nav-links { top: 16px; right: 14px; gap: 13px; }
+    }
+
     /* --- INTRO PAGE --- */
     #intro {
       position: fixed;
@@ -290,6 +318,13 @@
 </head>
 
 <body>
+  <!-- NEW: Navigation Bar -->
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
   <!-- Landing/Intro Page -->
   <div id="intro">
     <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="intro-logo" />
@@ -319,7 +354,7 @@
     <div class="modal" id="contactModal" tabindex="-1" aria-modal="true">
       <button class="close-btn" onclick="toggleModal()" aria-label="Close Contact Options">&times;</button>
       <div class="contact-group">
-        <a href="+441414591053" style="width:100%;" tabindex="0">
+        <a href="tel:+441414591053" style="width:100%;" tabindex="0">
           <button class="contact-btn">
             <span class="btn-icon" aria-hidden="true">📞</span>
             0141 459 1053

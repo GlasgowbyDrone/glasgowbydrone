@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Glasgow by Drone</title>
+  <meta name="description" content="Contact Glasgow by Drone for premium aerial photography, drone videography, and inspection services across Scotland.">
+  <meta property="og:title" content="Contact | Glasgow by Drone" />
+  <meta property="og:description" content="Get in touch with the Glasgow by Drone team for bookings, quotes, or questions about our services." />
+  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --accent-dark: #5022a5;
+      --bg: #1b093a;
+      --card-bg: rgba(0,0,0,0.68);
+      --white: #fff;
+      --gray: #f2f2f2;
+    }
+    body {
+      min-height: 100vh;
+      background: var(--primary);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .nav-links {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      display: flex;
+      gap: 24px;
+      z-index: 99;
+    }
+    .nav-link {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 0.88;
+      text-decoration: none;
+      background: none;
+      padding: 4px 12px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .nav-link.active, .nav-link:hover {
+      background: rgba(255, 1, 182, 0.16);
+      opacity: 1;
+    }
+    @media (max-width: 680px) {
+      .nav-links { top: 16px; right: 14px; gap: 13px; }
+    }
+    .logo-top {
+      width: 110px;
+      margin: 32px 0 10px 0;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .logo-top:hover {
+      transform: scale(1.06) rotate(-2deg);
+    }
+    .contact-container {
+      width: 100%;
+      max-width: 430px;
+      margin: 60px auto 0 auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.2rem 1.5rem 2rem 1.5rem;
+      box-shadow: 0 5px 28px 0 rgba(30,0,40,0.14);
+      text-align: center;
+      animation: fadeInUp 0.85s cubic-bezier(.7,1.7,.6,.97) 0.08s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      font-size: 2.0rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.7rem;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .contact-highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 1.6rem;
+    }
+    .contact-link {
+      background: #fff;
+      color: var(--primary);
+      border-radius: 11px;
+      padding: 13px 0 13px 0;
+      font-weight: bold;
+      font-size: 1.07rem;
+      box-shadow: 0 2px 12px 0 rgba(34,3,46,0.07);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      transition: background 0.17s, color 0.17s, transform 0.12s;
+      text-decoration: none !important;
+    }
+    .contact-link:hover, .contact-link:focus {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.03) translateY(-1px);
+    }
+    /* --- FORM --- */
+    form {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      align-items: stretch;
+    }
+    input, textarea {
+      padding: 12px 10px;
+      border-radius: 9px;
+      border: none;
+      background: #f2f2f2;
+      font-size: 1.02rem;
+      margin-bottom: 1px;
+      resize: vertical;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+      background: #fff;
+    }
+    button[type="submit"] {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 1.07rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.14s;
+      box-shadow: 0 3px 14px 0 rgba(255,0,182,0.12);
+    }
+    button[type="submit"]:hover, button[type="submit"]:focus {
+      background: var(--accent-dark);
+      transform: scale(1.03);
+    }
+    .footer {
+      width: 100vw;
+      position: fixed;
+      left: 0;
+      bottom: 10px;
+      font-size: 1.01rem;
+      letter-spacing: 0.01em;
+      color: #c9c9e6;
+      opacity: 0.93;
+      z-index: 9;
+      text-align: center;
+      padding-bottom: 10px;
+      user-select: text;
+      background: none;
+    }
+    @media (max-width: 600px) {
+      .contact-container { margin-top: 25px; padding: 1.1rem 0.4rem;}
+      .logo-top { width: 75px; margin-top: 12px; }
+      h1 { font-size: 1.25rem; }
+      .footer { font-size: 0.93rem;}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
+  <a href="index.html"><img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" /></a>
+  <main class="contact-container">
+    <h1>Contact <span class="contact-highlight">Glasgow by Drone</span></h1>
+    <div class="contact-options">
+      <a href="tel:+441414591053" class="contact-link" aria-label="Call Glasgow by Drone">
+        <span>📞</span> 0141 459 1053
+      </a>
+      <a href="mailto:info@glasgowbydrone.co.uk" class="contact-link" aria-label="Email Glasgow by Drone">
+        <span>✉️</span> info@glasgowbydrone.co.uk
+      </a>
+      <a href="https://instagram.com/glasgowbydroneofficial" class="contact-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <span>📸</span> @glasgowbydroneofficial
+      </a>
+    </div>
+    <form action="mailto:info@glasgowbydrone.co.uk" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="margin-top:1rem; color:#ffedff; font-size:.96rem; opacity:0.82;">
+      Prefer email or Instagram? Use the links above, or fill out the form and we'll get back to you within 1 business day.
+    </p>
+  </main>
+  <div class="footer">
+    &copy; 2025 Glasgow by Drone
+  </div>
+</body>
+</html>
