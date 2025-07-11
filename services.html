@@ -3,47 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Services | Glasgow by Drone</title>
-  <meta name="description" content="Explore professional drone services from Glasgow by Drone – aerial photography, cinematic video, inspections, and more across Scotland.">
+  <title>Services | Glasgow by Drone</title>
+  <meta name="description" content="Explore all drone photography, aerial videography, FPV flying, and inspection services offered by Glasgow by Drone across Scotland.">
   <meta property="og:title" content="Services | Glasgow by Drone" />
-  <meta property="og:description" content="Premium drone services in Scotland: aerial photography, FPV video, drone inspections and more." />
-  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydrone/glasgowbydronetrans.png" />
+  <meta property="og:description" content="See our full list of drone, photo, video, inspection, and creative media services available in Glasgow, Scotland and the UK.">
+  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     :root {
       --primary: #6C2BD9;
       --accent: #FF01B6;
-      --background: #21183c;
+      --card-bg: rgba(0,0,0,0.76);
       --white: #fff;
       --gray: #f2f2f2;
-      --card-bg: rgba(0,0,0,0.72);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+    html, body {
       min-height: 100vh;
+      margin: 0;
+      padding: 0;
       background: var(--primary);
       color: var(--white);
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 100vw;
+      box-sizing: border-box;
     }
-    .logo-top {
-      width: 120px;
-      margin: 30px 0 0 0;
-      display: block;
-      transition: transform 0.3s;
-    }
-    .logo-top:hover { transform: scale(1.05) rotate(-2deg);}
     .nav-links {
       position: absolute;
       top: 40px;
       right: 50px;
       display: flex;
       gap: 24px;
+      z-index: 99;
     }
     .nav-link {
-      color: var(--white);
+      color: #fff;
       font-size: 1rem;
       font-weight: bold;
       opacity: 0.88;
@@ -57,161 +50,141 @@
       background: rgba(255, 1, 182, 0.16);
       opacity: 1;
     }
-
+    .logo-top {
+      width: 110px;
+      margin: 32px 0 10px 0;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .logo-top:hover {
+      transform: scale(1.06) rotate(-2deg);
+    }
+    .services-main-wrap {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 120px;
+      box-sizing: border-box;
+    }
     .services-container {
       width: 100%;
-      max-width: 900px;
-      margin: 60px auto 0 auto;
+      max-width: 720px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 6px 32px 0 rgba(30,0,40,0.12);
+      text-align: center;
+      animation: fadeInUp 0.8s cubic-bezier(.7,1.7,.6,.97) 0.1s both;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
       align-items: center;
-      animation: fadeInUp 0.8s cubic-bezier(.7,1.7,.6,.97) 0.1s both;
     }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(50px);}
       to   { opacity: 1; transform: translateY(0);}
     }
-    .services-title {
-      font-size: 2.2rem;
-      font-weight: 900;
+    h1 {
+      font-size: 2.3rem;
       letter-spacing: 1px;
+      margin-bottom: 1rem;
+      font-weight: 900;
       color: var(--white);
-      margin-bottom: 1.2rem;
-      text-align: center;
     }
     .services-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.3rem;
+      gap: 22px;
       justify-content: center;
+      align-items: stretch;
+      margin: 2.1rem 0 0 0;
       width: 100%;
     }
     .service-card {
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 2rem 1.6rem 1.5rem 1.6rem;
-      box-shadow: 0 4px 24px 0 rgba(30,0,40,0.13);
-      width: 320px;
-      max-width: 92vw;
-      text-align: left;
+      background: rgba(255,255,255,0.13);
+      border-radius: 13px;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 1.5rem 1.1rem;
+      min-width: 220px;
+      max-width: 320px;
+      flex: 1 1 220px;
+      box-shadow: 0 2px 12px 0 rgba(44,0,44,0.08);
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
-      transition: transform 0.2s, box-shadow 0.18s;
-      border: 1.5px solid transparent;
+      align-items: center;
+      margin: 0;
+      text-align: center;
     }
-    .service-card:hover {
-      transform: translateY(-7px) scale(1.03) rotate(-1.1deg);
-      box-shadow: 0 8px 38px 0 rgba(255,1,182,0.17);
-      border-color: var(--accent);
-    }
-    .service-title {
-      font-size: 1.23rem;
-      font-weight: 800;
+    .service-card b {
       color: var(--accent);
-      margin-bottom: 3px;
-    }
-    .service-desc {
-      font-size: 1.08rem;
-      color: var(--gray);
-      opacity: 0.94;
-      line-height: 1.65;
-    }
-    .service-icon {
-      font-size: 2.05rem;
-      margin-bottom: 3px;
-    }
-    .cta-btn {
-      display: inline-block;
-      margin: 2.4rem 0 0 0;
-      padding: 14px 42px;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.07rem;
+      font-size: 1.09rem;
       font-weight: bold;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      box-shadow: 0 3px 18px 0 rgba(255,0,182,0.11);
-      cursor: pointer;
-      transition: background 0.22s, transform 0.14s;
-    }
-    .cta-btn:hover {
-      background: #5022a5;
-      transform: translateY(-2px) scale(1.03);
+      display: block;
+      margin-bottom: 0.7rem;
     }
     @media (max-width: 900px) {
-      .services-container { margin-top: 40px; }
-      .services-title { font-size: 1.42rem; }
-      .services-list { gap: 1.1rem; }
-      .service-card { padding: 1.3rem 0.6rem 1rem 0.6rem;}
+      .services-container { padding: 1.3rem 0.8rem; }
       .logo-top { width: 80px; margin-top: 16px; }
       .nav-links { top: 16px; right: 14px; gap: 13px; }
+      h1 { font-size: 1.6rem; }
+      .services-list { gap: 16px;}
+      .service-card { font-size: 1rem; min-width: 170px; max-width: 98vw;}
     }
-    @media (max-width: 500px) {
-      .services-container { margin-top: 17px; padding: 0 1vw; }
-      .service-card { font-size: .98rem; }
-      .services-list { flex-direction: column; gap: 1.5rem;}
+    @media (max-width: 600px) {
+      .services-main-wrap { padding-top: 68px; }
+      .services-container { padding: 1rem 0.18rem 0.6rem 0.18rem; }
+      h1 { font-size: 1.18rem; }
+      .services-list { flex-direction: column; gap: 14px;}
+      .service-card { min-width: 0; width: 100%; max-width: 100vw;}
     }
   </style>
 </head>
 <body>
-  <a href="index.html"><img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" /></a>
   <nav class="nav-links">
     <a href="index.html" class="nav-link">Home</a>
     <a href="about.html" class="nav-link">About</a>
     <a href="services.html" class="nav-link active">Services</a>
     <a href="contact.html" class="nav-link">Contact</a>
   </nav>
-  <main class="services-container">
-    <div class="services-title">Our Services</div>
-    <section class="services-list">
-      <div class="service-card">
-        <div class="service-icon">📸</div>
-        <div class="service-title">Aerial Photography</div>
-        <div class="service-desc">
-          High-resolution stills from unique vantage points—perfect for real estate, events, architecture, and tourism. 4K/5K professional-grade imaging.
+  <a href="index.html"><img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" /></a>
+  <div class="services-main-wrap">
+    <main class="services-container">
+      <h1>Our Drone Services</h1>
+      <div class="services-list">
+        <div class="service-card">
+          <b>Aerial Photography</b>
+          High-resolution still images for real estate, marketing, inspections, and creative projects.
+        </div>
+        <div class="service-card">
+          <b>Cinematic Drone Video</b>
+          4K/5K video, dynamic tracking, and editing for events, tourism, property, and business promo.
+        </div>
+        <div class="service-card">
+          <b>FPV Flying</b>
+          First-person view drone footage for high-speed, immersive perspectives and creative projects.
+        </div>
+        <div class="service-card">
+          <b>Roof & Asset Inspections</b>
+          Safe, rapid, and detailed inspections for roofs, towers, solar panels, and industrial sites.
+        </div>
+        <div class="service-card">
+          <b>Construction Progress</b>
+          Regular site surveys and time-lapse to document construction and site progress.
+        </div>
+        <div class="service-card">
+          <b>Travel & Social Media</b>
+          Custom packages for tourism, hotels, hospitality, influencers, and social media content.
+        </div>
+        <div class="service-card">
+          <b>Event Coverage</b>
+          Festivals, sports, launches, and private events captured from unique perspectives.
         </div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🎬</div>
-        <div class="service-title">Cinematic Drone Videography</div>
-        <div class="service-desc">
-          Smooth, breathtaking aerial footage for social media, film, advertising, property tours, and creative projects. Options include FPV and tracking shots.
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <div class="service-title">Roof & Property Inspections</div>
-        <div class="service-desc">
-          Quick, safe, and detailed surveys of roofs, gutters, and hard-to-reach places—ideal for insurance, property managers, and homeowners.
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚧</div>
-        <div class="service-title">Construction Progress & Survey</div>
-        <div class="service-desc">
-          Monitor projects, document progress, and capture detailed overheads for site managers, contractors, and developers.
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🌄</div>
-        <div class="service-title">Travel & Tourism Content</div>
-        <div class="service-desc">
-          Show off Scotland’s beauty—create standout visual content for hospitality, hotels, destinations, and tourism campaigns.
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔍</div>
-        <div class="service-title">Custom Drone Solutions</div>
-        <div class="service-desc">
-          Need something unique? We can provide bespoke aerial footage or inspection solutions tailored to your needs. Just ask!
-        </div>
-      </div>
-    </section>
-    <a href="mailto:info@glasgowbydrone.co.uk" class="cta-btn">Request a Quote</a>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
