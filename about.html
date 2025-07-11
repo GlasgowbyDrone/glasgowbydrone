@@ -27,6 +27,7 @@
       font-family: Arial, sans-serif;
       width: 100vw;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
     .nav-links {
       position: absolute;
@@ -70,7 +71,7 @@
       box-sizing: border-box;
     }
     .about-container {
-      width: 100%;
+      width: 96vw;
       max-width: 520px;
       background: var(--card-bg);
       border-radius: 18px;
@@ -116,7 +117,7 @@
       background: rgba(255,255,255,0.10);
       border-radius: 12px;
       padding: 1.1rem 1.4rem;
-      width: 100%;
+      width: 90%;
       max-width: 340px;
       margin: 0 auto;
       color: var(--white);
@@ -149,20 +150,24 @@
         padding-top: 90px;
       }
       .about-container {
-        padding: 1.5rem 1rem 1rem 1rem;
+        padding: 1.5rem 1rem 1.2rem 1rem;
+        max-width: 98vw;
       }
       .logo-top { width: 80px; margin-top: 16px; }
       .nav-links { top: 16px; right: 14px; gap: 13px; }
-      h1 { font-size: 1.6rem; }
+      h1 { font-size: 1.4rem; }
     }
-    @media (max-width: 520px) {
+    @media (max-width: 480px) {
       .about-main-wrap {
-        padding-top: 68px;
+        padding-top: 60px;
       }
       .about-container {
-        padding: 1rem 0.25rem 0.5rem 0.25rem;
+        padding: 0.9rem 0.3rem 0.6rem 0.3rem;
+        border-radius: 10px;
+        max-width: 99vw;
       }
-      h1 { font-size: 1.18rem; }
+      .team-card { font-size: 0.99rem; }
+      h1 { font-size: 1.08rem; }
     }
   </style>
 </head>

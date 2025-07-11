@@ -26,6 +26,7 @@
       font-family: Arial, sans-serif;
       width: 100vw;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
     .nav-links {
       position: absolute;
@@ -69,7 +70,7 @@
       box-sizing: border-box;
     }
     .services-container {
-      width: 100%;
+      width: 96vw;
       max-width: 720px;
       background: var(--card-bg);
       border-radius: 18px;
@@ -130,16 +131,16 @@
       .services-container { padding: 1.3rem 0.8rem; }
       .logo-top { width: 80px; margin-top: 16px; }
       .nav-links { top: 16px; right: 14px; gap: 13px; }
-      h1 { font-size: 1.6rem; }
+      h1 { font-size: 1.4rem; }
       .services-list { gap: 16px;}
       .service-card { font-size: 1rem; min-width: 170px; max-width: 98vw;}
     }
     @media (max-width: 600px) {
-      .services-main-wrap { padding-top: 68px; }
-      .services-container { padding: 1rem 0.18rem 0.6rem 0.18rem; }
-      h1 { font-size: 1.18rem; }
-      .services-list { flex-direction: column; gap: 14px;}
-      .service-card { min-width: 0; width: 100%; max-width: 100vw;}
+      .services-main-wrap { padding-top: 60px; }
+      .services-container { padding: 0.9rem 0.3rem 0.6rem 0.3rem; border-radius: 10px; max-width: 99vw; }
+      h1 { font-size: 1.08rem; }
+      .services-list { flex-direction: column; gap: 10px; margin: 1.1rem 0 0 0; }
+      .service-card { min-width: 0; width: 98%; max-width: 99vw; font-size: 0.98rem; }
     }
   </style>
 </head>
