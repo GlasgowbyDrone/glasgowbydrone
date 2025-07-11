@@ -2,84 +2,239 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Services | Glasgow by Drone</title>
   <meta name="description" content="Explore the full range of aerial photography, drone videography, FPV, and inspection services from Glasgow by Drone.">
+  <meta name="keywords" content="drone services Glasgow, FPV drone Scotland, aerial inspections, drone footage Scotland, Glasgow by Drone" />
   <meta property="og:title" content="Services | Glasgow by Drone" />
   <meta property="og:description" content="Browse Glasgow by Drone’s drone services including roof inspections, cinematic video, creative campaigns and more." />
   <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta property="og:url" content="https://glasgowbydrone.co.uk/services.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://glasgowbydrone.co.uk/services.html" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preload" href="glasgowbydronetrans.png" as="image">
+  <link rel="preload" href="website_background.mp4" as="video" type="video/mp4">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Aerial Drone Photography and Videography",
+    "provider": {
+      "@type": "Organization",
+      "name": "Glasgow by Drone",
+      "url": "https://glasgowbydrone.co.uk",
+      "logo": "https://glasgowbydrone.github.io/glasgowbydronetrans.png",
+      "sameAs": [
+        "https://instagram.com/glasgowbydroneofficial",
+        "https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA"
+      ]
+    },
+    "areaServed": "Scotland",
+    "description": "Explore aerial photography, drone videography, FPV footage, roof inspections and more — powered by certified remote pilots."
+  }
+  </script>
 
   <style>
-    :root{
-      --primary:#6C2BD9;--accent:#FF01B6;
-      --card-bg:rgba(0,0,0,.69);--white:#fff;--gray:#f2f2f2;
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --card-bg: rgba(0,0,0,.69);
+      --white: #fff;
+      --gray: #f2f2f2;
     }
 
-    /* ---------- FIXED HEADER ---------- */
-    .main-header{
-      width:100vw;position:fixed;top:0;left:0;z-index:999;
-      background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 76px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .header-inner{
-      width:100%;padding:0 18px;display:flex;gap:16px;align-items:center;
-      height:76px;box-sizing:border-box
-    }
-    .header-logo{width:65px;transition:transform .23s}
-    .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
-    .header-nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
-    .nav-link{
-      color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
-      padding:7px 16px;border-radius:8px;text-decoration:none;white-space:nowrap;
-      transition:background .15s,opacity .15s
-    }
-    .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
-
-    @media(max-width:900px){.header-nav{gap:12px}}
-    @media(max-width:700px){
-      .header-inner{height:60px;padding:0 6px}
-      .header-logo{width:44px}
-      .nav-link{font-size:.95rem;padding:6px 10px}
+    @media(max-width:700px) {
+      body { padding-top: 62px; }
     }
 
-    /* ---------- PAGE LAYOUT ---------- */
-    body{
-      min-height:100vh;margin:0;padding-top:76px;
-      background:var(--primary);color:var(--white);
-      font-family:Arial,Helvetica,sans-serif;
-      display:flex;flex-direction:column;align-items:center
+    .main-header {
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(30,11,39,.92);
+      box-shadow: 0 2px 24px rgba(44,0,44,.11);
     }
-    @media(max-width:700px){body{padding-top:62px}}
 
-    .services-container{
-      width:100%;max-width:800px;margin:54px auto 0;
-      background:var(--card-bg);border-radius:19px;
-      padding:2rem 1rem;box-shadow:0 6px 32px rgba(30,0,40,.10);
-      text-align:center
+    .header-inner {
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      height: 76px;
+      box-sizing: border-box;
     }
-    h1{font-size:2.2rem;font-weight:900;margin-bottom:1.3rem}
 
-    /* ---------- SERVICE CARDS ---------- */
-    .services-list{
-      display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:30px
+    .header-logo {
+      width: 65px;
+      transition: transform .23s;
     }
-    .service-card{
-      background:rgba(255,255,255,.09);border-radius:12px;
-      flex:1 1 240px;max-width:330px;min-width:210px;
-      padding:1.2rem 1.3rem;color:var(--white);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      min-height:170px;font-size:1.08rem;box-shadow:0 1px 7px rgba(40,0,60,.06);
-      transition:transform .14s
-    }
-    .service-card:hover{transform:scale(1.02) translateY(-4px)}
-    .service-title{font-size:1.14rem;font-weight:700;color:var(--accent);margin-bottom:.48rem;text-align:center}
-    .service-desc{font-size:1.01rem;color:var(--gray);text-align:center}
 
-    @media(max-width:920px){.services-list{gap:18px}}
-    @media(max-width:680px){
-      .services-container{padding:1rem .3rem;margin-top:23px}
-      h1{font-size:1.22rem}.services-list{gap:12px}
-      .service-card{min-width:93vw;max-width:99vw;font-size:1rem;padding:1rem .8rem}
+    .header-logo-link:hover .header-logo {
+      transform: scale(1.07) rotate(-2deg);
+    }
+
+    .header-nav {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #fff;
+      font: 700 1.03rem/1 Arial, sans-serif;
+      opacity: .9;
+      padding: 7px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .15s, opacity .15s;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      background: rgba(255,1,182,.16);
+      opacity: 1;
+    }
+
+    @media(max-width:900px) {
+      .header-nav { gap: 12px; }
+    }
+    @media(max-width:700px) {
+      .header-inner { height: 60px; padding: 0 6px; }
+      .header-logo { width: 44px; }
+      .nav-link { font-size: .95rem; padding: 6px 10px; }
+    }
+
+    .services-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 54px auto 0;
+      background: var(--card-bg);
+      border-radius: 19px;
+      padding: 2rem 1rem;
+      box-shadow: 0 6px 32px rgba(30,0,40,.10);
+      text-align: center;
+      animation: fadeInUp 0.9s ease-in-out both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 1.3rem;
+    }
+
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,.09);
+      border-radius: 12px;
+      flex: 1 1 240px;
+      max-width: 330px;
+      min-width: 210px;
+      padding: 1.2rem 1.3rem;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 170px;
+      font-size: 1.08rem;
+      box-shadow: 0 1px 7px rgba(40,0,60,.06);
+      transition: transform .14s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    .service-title {
+      font-size: 1.14rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: .48rem;
+      text-align: center;
+    }
+
+    .service-desc {
+      font-size: 1.01rem;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    @media(max-width:920px) {
+      .services-list { gap: 18px; }
+    }
+
+    @media(max-width:680px) {
+      .services-container { padding: 1rem .3rem; margin-top: 23px; }
+      h1 { font-size: 1.22rem; }
+      .services-list { gap: 12px; }
+      .service-card {
+        min-width: 93vw;
+        max-width: 99vw;
+        font-size: 1rem;
+        padding: 1rem .8rem;
+      }
+    }
+
+    #scrollToTop {
+      display: none;
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 999;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.25s ease;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #scrollToTop:hover {
+      background-color: #5022a5;
+    }
+
+    @media (max-width: 700px) {
+      #scrollToTop {
+        padding: 10px 14px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 18px;
+      }
     }
   </style>
 </head>
@@ -87,14 +242,14 @@
 
   <header class="main-header">
     <div class="header-inner">
-      <a href="index.html" class="header-logo-link">
+      <a href="index.html" class="header-logo-link" aria-label="Home">
         <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
-
-      <nav class="header-nav">
-        <a href="index.html"   class="nav-link">Home</a>
-        <a href="about.html"   class="nav-link">About</a>
-        <a href="services.html"class="nav-link active">Services</a>
+      <nav class="header-nav" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active" aria-current="page">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
@@ -102,38 +257,49 @@
 
   <main class="services-container">
     <h1>Our Drone Services</h1>
-
     <div class="services-list">
       <div class="service-card">
         <div class="service-title">Aerial Photography</div>
         <div class="service-desc">Stunning stills for real estate, marketing, tourism, and creative campaigns.</div>
       </div>
-
       <div class="service-card">
         <div class="service-title">Drone Videography</div>
         <div class="service-desc">Cinematic footage in up to 4K HDR, including events, promos, and travel films.</div>
       </div>
-
       <div class="service-card">
         <div class="service-title">FPV Cinematic</div>
         <div class="service-desc">Dynamic, immersive flights for commercial, creative, and sports content.</div>
       </div>
-
       <div class="service-card">
         <div class="service-title">Roof &amp; Building Inspections</div>
         <div class="service-desc">Safe, high-res surveys for property, insurance, and maintenance checks.</div>
       </div>
-
       <div class="service-card">
         <div class="service-title">Construction Progress</div>
         <div class="service-desc">Monitor site progress with regular aerial updates and timelapses.</div>
       </div>
-
       <div class="service-card">
         <div class="service-title">Custom Projects</div>
         <div class="service-desc">Have a unique project? We offer tailored drone solutions across Scotland.</div>
       </div>
     </div>
   </main>
+
+  <button id="scrollToTop" title="Back to Top">↑</button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollToTop");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "flex";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+    scrollBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
 </body>
 </html>

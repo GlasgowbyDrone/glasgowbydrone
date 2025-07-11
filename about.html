@@ -2,84 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>About | Glasgow by Drone</title>
+
+  <!-- SEO -->
   <meta name="description" content="Learn about Glasgow by Drone — Scotland’s premier aerial photography and drone videography service. See why we’re trusted for creative and commercial work.">
+  <meta name="keywords" content="about Glasgow drone team, drone operator Glasgow, Scotland aerial team, CAA certified drone, Glasgow by Drone crew" />
   <meta property="og:title" content="About | Glasgow by Drone" />
   <meta property="og:description" content="Meet the team behind Glasgow by Drone, offering premium drone footage, roof inspections, and more across Scotland." />
   <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta property="og:url" content="https://glasgowbydrone.co.uk/about.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://glasgowbydrone.co.uk/about.html" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+  <!-- Preload assets -->
+  <link rel="preload" href="glasgowbydronetrans.png" as="image">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Glasgow by Drone",
+    "url": "https://glasgowbydrone.co.uk",
+    "logo": "https://glasgowbydrone.github.io/glasgowbydronetrans.png",
+    "sameAs": [
+      "https://instagram.com/glasgowbydroneofficial",
+      "https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA"
+    ],
+    "description": "Glasgow by Drone is Scotland’s premier aerial media provider. Meet the CAA-certified team."
+  }
+  </script>
+
   <style>
-    :root{
-      --primary:#6C2BD9;--accent:#FF01B6;
-      --card-bg:rgba(0,0,0,.70);--white:#fff;--gray:#f2f2f2;
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --card-bg: rgba(0,0,0,.70);
+      --white: #fff;
+      --gray: #f2f2f2;
     }
 
     /* ---------- FIXED HEADER ---------- */
-    .main-header{
-      width:100vw;position:fixed;top:0;left:0;z-index:999;
-      background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
+    .main-header {
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(30,11,39,.92);
+      box-shadow: 0 2px 24px rgba(44,0,44,.11)
     }
-    .header-inner{
-      width:100%;padding:0 18px;display:flex;gap:16px;align-items:center;
-      height:76px;box-sizing:border-box      /* ensures no overflow */
+    .header-inner {
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      height: 76px;
+      box-sizing: border-box;
     }
-    .header-logo{width:65px;transition:transform .23s}
-    .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
-    .header-nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
-    .nav-link{
-      color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
-      padding:7px 16px;border-radius:8px;text-decoration:none;
-      transition:background .15s,opacity .15s;white-space:nowrap
+    .header-logo {
+      width: 65px;
+      transition: transform .23s;
     }
-    .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
+    .header-logo-link:hover .header-logo {
+      transform: scale(1.07) rotate(-2deg);
+    }
+    .header-nav {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      color: #fff;
+      font: 700 1.03rem/1 Arial, sans-serif;
+      opacity: .9;
+      padding: 7px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .15s, opacity .15s;
+      white-space: nowrap;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+      background: rgba(255,1,182,.16);
+      opacity: 1;
+    }
 
-    @media(max-width:900px){.header-nav{gap:12px}}
-    @media(max-width:700px){
-      .header-inner{height:60px;padding:0 6px}
-      .header-logo{width:44px}
-      .nav-link{font-size:.95rem;padding:6px 10px}
+    @media (max-width: 900px) {
+      .header-nav { gap: 12px; }
+    }
+    @media (max-width: 700px) {
+      .header-inner { height: 60px; padding: 0 6px; }
+      .header-logo { width: 44px; }
+      .nav-link { font-size: .95rem; padding: 6px 10px; }
     }
 
     /* ---------- PAGE LAYOUT ---------- */
-    body{
-      min-height:100vh;margin:0;padding-top:76px;
-      display:flex;flex-direction:column;align-items:center;
-      background:var(--primary);color:var(--white);font-family:Arial,Helvetica,sans-serif
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 76px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--primary);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
     }
-    @media(max-width:700px){body{padding-top:62px}}
-
-    .about-container{
-      width:100%;max-width:520px;margin:60px auto 0;
-      background:var(--card-bg);border-radius:18px;
-      padding:2.5rem 2rem 2rem;box-shadow:0 6px 32px rgba(30,0,40,.12);
-      text-align:center;animation:fadeInUp .8s cubic-bezier(.7,1.7,.6,.97) .1s both
-    }
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
-
-    h1{font-size:2.3rem;font-weight:900;margin-bottom:1rem}
-    .about-highlight{color:var(--accent);font-weight:700}
-    p{font-size:1.1rem;line-height:1.7;color:var(--gray);margin-bottom:1.2rem}
-
-    .team-section{margin-top:2.2rem;display:flex;flex-direction:column;gap:1.2rem;align-items:center}
-    .team-card{
-      background:rgba(255,255,255,.08);border-radius:12px;
-      padding:1.1rem 1.4rem;width:90%;max-width:340px;
-      color:var(--white);font-size:1.08rem;box-shadow:0 1px 7px rgba(40,0,60,.05)
+    @media (max-width: 700px) {
+      body { padding-top: 62px; }
     }
 
-    .cta-btn{
-      display:inline-block;margin-top:2rem;padding:14px 42px;
-      background:var(--accent);color:#fff;border:none;border-radius:10px;
-      font-size:1.06rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;
-      box-shadow:0 3px 18px rgba(255,0,182,.11);transition:background .22s,transform .14s
+    .about-container {
+      width: 100%;
+      max-width: 520px;
+      margin: 60px auto 0;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 2.5rem 2rem 2rem;
+      box-shadow: 0 6px 32px rgba(30,0,40,.12);
+      text-align: center;
+      animation: fadeInUp .8s cubic-bezier(.7,1.7,.6,.97) .1s both;
     }
-    .cta-btn:hover{background:#5022a5;transform:translateY(-2px) scale(1.03)}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-    @media(max-width:680px){
-      .about-container{margin:32px 0 0;padding:1.3rem .8rem}
-      h1{font-size:1.42rem}.team-card{font-size:.98rem}
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .about-highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 1.2rem;
+    }
+
+    .team-section {
+      margin-top: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .team-card {
+      background: rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      width: 90%;
+      max-width: 340px;
+      color: var(--white);
+      font-size: 1.08rem;
+      box-shadow: 0 1px 7px rgba(40,0,60,.05);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 14px 42px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.06rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      box-shadow: 0 3px 18px rgba(255,0,182,.11);
+      transition: background .22s, transform .14s;
+    }
+    .cta-btn:hover {
+      background: #5022a5;
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    @media (max-width: 680px) {
+      .about-container { margin: 32px 0 0; padding: 1.3rem .8rem; }
+      h1 { font-size: 1.42rem; }
+      .team-card { font-size: .98rem; }
+    }
+
+    /* ---------- SCROLL TO TOP BUTTON ---------- */
+    #scrollToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      background-color: rgba(255, 1, 182, 0.85);
+      color: white;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+    #scrollToTop:hover {
+      background-color: rgba(255, 1, 182, 1);
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -90,11 +226,11 @@
       <a href="index.html" class="header-logo-link">
         <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
-
       <nav class="header-nav">
-        <a href="index.html"   class="nav-link">Home</a>
-        <a href="about.html"   class="nav-link active">About</a>
-        <a href="services.html"class="nav-link">Services</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
@@ -113,13 +249,27 @@
 
     <section class="team-section">
       <div class="team-card">
-        <b>Ryan Murphy</b><br>
-        Founder &amp; Remote Pilot<br>
-        Licensed Remote Pilot, creative lead, and perfectionist behind the lens.
+        <b class="about-highlight">Ryan Murphy</b><br>
+        Founder &amp; Remote Pilot
+        <br></br>
+        CAA Licensed Remote Pilot, Creative Lead, and Perfectionist behind the lens.
       </div>
     </section>
 
     <a href="services.html" class="cta-btn">Explore Our Services</a>
   </main>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollToTop" title="Back to Top">↑</button>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

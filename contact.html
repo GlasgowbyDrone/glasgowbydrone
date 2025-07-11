@@ -2,13 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Contact | Glasgow by Drone</title>
   <meta name="description" content="Contact Glasgow by Drone for premium aerial photography, drone videography, and inspection services across Scotland.">
+  <meta name="keywords" content="contact Glasgow by Drone, drone videography Scotland, aerial photography contact, roof inspections drone, Glasgow drone services" />
   <meta property="og:title" content="Contact | Glasgow by Drone" />
   <meta property="og:description" content="Get in touch with the Glasgow by Drone team for bookings, quotes, or questions about our services." />
   <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta property="og:url" content="https://glasgowbydrone.co.uk/contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://glasgowbydrone.co.uk/contact.html" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preload" href="glasgowbydronetrans.png" as="image">
+  <link rel="preload" href="website_background.mp4" as="video" type="video/mp4">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact - Glasgow by Drone",
+    "url": "https://glasgowbydrone.co.uk/contact.html",
+    "description": "Reach out to Glasgow by Drone for drone videography, aerial photography, or inspection services. Bookings and quotes available.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Glasgow by Drone",
+      "url": "https://glasgowbydrone.co.uk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://glasgowbydrone.github.io/glasgowbydronetrans.png"
+      },
+      "sameAs": [
+        "https://instagram.com/glasgowbydroneofficial",
+        "https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA"
+      ]
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -17,8 +45,6 @@
       --call-green:#34C759;--email-orange:#FF9500;--youtube-red:#FF0000;
       --insta-gradient:linear-gradient(90deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)
     }
-
-    /* ---------- FIXED HEADER ---------- */
     .main-header{
       width:100vw;position:fixed;top:0;left:0;z-index:999;
       background:rgba(30,11,39,.92);box-shadow:0 2px 24px rgba(44,0,44,.11)
@@ -26,13 +52,12 @@
     .header-inner{
       width:100%;box-sizing:border-box;
       padding:0 18px;display:flex;align-items:center;gap:16px;
-      /* logo sticks left, nav pushes right */
     }
     .header-logo{width:65px;transition:transform .23s}
     .header-logo-link:hover .header-logo{transform:scale(1.07) rotate(-2deg)}
     .header-nav{
-      margin-left:auto;                     /* pushes nav to far-right */
-      display:flex;gap:16px;flex-wrap:wrap; /* wrap prevents overflow  */
+      margin-left:auto;
+      display:flex;gap:16px;flex-wrap:wrap;
     }
     .nav-link{
       color:#fff;font:700 1.03rem/1 Arial,sans-serif;opacity:.9;
@@ -40,14 +65,12 @@
       transition:background .15s,opacity .15s;white-space:nowrap
     }
     .nav-link.active,.nav-link:hover{background:rgba(255,1,182,.16);opacity:1}
-
     @media(max-width:900px){.header-nav{gap:12px}}
     @media(max-width:700px){
       .header-logo{width:44px}
       .nav-link{font-size:.95rem;padding:6px 10px}
     }
 
-    /* ---------- PAGE LAYOUT ---------- */
     body{
       min-height:100vh;margin:0;padding-top:76px;
       background:var(--primary);color:var(--white);
@@ -62,11 +85,8 @@
       text-align:center;animation:fadeInUp .85s cubic-bezier(.7,1.7,.6,.97) .08s both
     }
     @keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
-
     h1{font-size:2rem;font-weight:900;margin:.7rem 0}
     .contact-highlight{color:var(--accent)}
-
-    /* ---------- CONTACT BUTTONS ---------- */
     .contact-options{display:flex;flex-direction:column;gap:14px;margin-bottom:1.6rem}
     .contact-link{
       display:flex;align-items:center;justify-content:center;gap:13px;
@@ -75,10 +95,7 @@
       box-shadow:0 2px 12px rgba(34,3,46,.07);transition:background .19s,transform .12s
     }
     .contact-link svg{width:22px;height:22px;margin-right:7px;margin-left:-2px}
-    /* flash anim keyframes unchanged – omitted for brevity */
-
     .footer{position:fixed;bottom:10px;width:100%;text-align:center;font-size:1.01rem;color:#c9c9e6}
-
     @media(max-width:480px){
       .contact-container{margin:18px auto 0;padding:1.1rem .3rem}
       h1{font-size:1.05rem}.contact-link svg{width:17px;height:17px;margin-right:5px}
@@ -92,11 +109,11 @@
       <a href="index.html" class="header-logo-link">
         <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
       </a>
-
       <nav class="header-nav">
-        <a href="index.html"   class="nav-link">Home</a>
-        <a href="about.html"   class="nav-link">About</a>
-        <a href="services.html"class="nav-link">Services</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
     </div>
@@ -104,36 +121,30 @@
 
   <main class="contact-container">
     <h1>Contact <span class="contact-highlight">Glasgow by Drone</span></h1>
+    <br>
 
     <div class="contact-options">
-      <!-- contact buttons unchanged -->
-      <!-- phone -->
       <a href="tel:+441414591053" class="contact-link call">
         <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.79a15.053 15.053 0 0 0 6.61 6.61l2.2-2.2a1.1 1.1 0 0 1 1.08-.26 12.02 12.02 0 0 0 3.77.6 1.1 1.1 0 0 1 1.1 1.1v3.48a1.1 1.1 0 0 1-1.09 1.1A16.9 16.9 0 0 1 4.1 5.2 1.1 1.1 0 0 1 5.2 4.1h3.48A1.1 1.1 0 0 1 9.77 5.2c.06 1.28.24 2.53.6 3.77a1.1 1.1 0 0 1-.26 1.08l-2.2 2.2Z" stroke="#34C759" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Give us a call
       </a>
-      <!-- email -->
       <a href="mailto:info@glasgowbydrone.co.uk" class="contact-link email">
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Z" stroke="#FF9500" stroke-width="1.5"/><path d="M5 7l7 6 7-6" stroke="#FF9500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Email Enquiries
       </a>
-      <!-- YouTube -->
       <a href="https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA" class="contact-link youtube" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6.5" width="19" height="11" rx="4" stroke="#FF0000" stroke-width="1.5"/><path d="M10.5 9.5v5l5-2.5-5-2.5Z" fill="#FF0000"/></svg>
         Visit our YouTube
       </a>
-      <!-- Instagram -->
       <a href="https://instagram.com/glasgowbydroneofficial" class="contact-link instagram" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#cc2366" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="#dc2743" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#f09433"/></svg>
         Follow on Instagram
       </a>
-      <!-- Media pack -->
       <a href="business_pack.pdf" download class="contact-link media-pack">
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v14m0 0-4-4m4 4 4-4M4 19h16" stroke="#8839f8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Download Media Pack
       </a>
     </div>
-
     <p style="margin-top:1rem;color:#ffedff;font-size:.96rem;opacity:.82">
       Prefer email or Instagram? Use the links above and we'll get back to you within 1 business day.
     </p>

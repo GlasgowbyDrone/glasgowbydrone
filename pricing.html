@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Pricing | Glasgow by Drone</title>
+  <meta name="description" content="Transparent pricing for aerial photography, drone videography, and inspection services by Glasgow by Drone.">
+  <meta name="keywords" content="drone pricing Scotland, Glasgow drone packages, aerial photography prices, drone videography cost, FPV drone service rates">
+  <meta property="og:title" content="Pricing | Glasgow by Drone" />
+  <meta property="og:description" content="View our drone service packages and pricing options tailored for creative and commercial work." />
+  <meta property="og:image" content="https://glasgowbydrone.github.io/glasgowbydronetrans.png" />
+  <meta property="og:url" content="https://glasgowbydrone.co.uk/pricing.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://glasgowbydrone.co.uk/pricing.html" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preload" href="glasgowbydronetrans.png" as="image">
+  <link rel="preload" href="website_background.mp4" as="video" type="video/mp4">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Drone Service Packages",
+    "provider": {
+      "@type": "Organization",
+      "name": "Glasgow by Drone",
+      "url": "https://glasgowbydrone.co.uk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://glasgowbydrone.github.io/glasgowbydronetrans.png"
+      },
+      "sameAs": [
+        "https://instagram.com/glasgowbydroneofficial",
+        "https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA"
+      ]
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Scotland"
+    },
+    "serviceType": [
+      "Aerial Photography",
+      "Drone Videography",
+      "FPV Drone Work",
+      "Commercial Licensing"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #6C2BD9;
+      --accent: #FF01B6;
+      --card-bg: rgba(0,0,0,.69);
+      --white: #fff;
+      --gray: #f2f2f2;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 76px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .main-header {
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(30,11,39,.92);
+      box-shadow: 0 2px 24px rgba(44,0,44,.11);
+    }
+
+    .header-inner {
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      height: 76px;
+      box-sizing: border-box;
+    }
+
+    .header-logo {
+      width: 65px;
+      transition: transform .23s;
+    }
+
+    .header-logo-link:hover .header-logo {
+      transform: scale(1.07) rotate(-2deg);
+    }
+
+    .header-nav {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #fff;
+      font: 700 1.03rem/1 Arial, sans-serif;
+      opacity: .9;
+      padding: 7px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .15s, opacity .15s;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      background: rgba(255,1,182,.16);
+      opacity: 1;
+    }
+
+    .pricing-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInUp .9s ease-in-out both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .price-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 1.8rem;
+      width: 230px;
+      max-width: 100%;
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.25s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
+
+    .package-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .package-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .package-features {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    #scrollToTop {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    #scrollToTop:hover {
+      background-color: #5022a5;
+    }
+
+    @media (max-width: 700px) {
+      .price-card {
+        width: 85vw;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo-link">
+      <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="pricing.html" class="nav-link active">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pricing-container">
+  <h1>Drone Service Packages</h1>
+  <div class="pricing-grid">
+
+    <div class="price-card">
+      <div class="package-title">Starter Flight</div>
+      <div class="package-price">£195</div>
+      <div class="package-features">
+        15 high-res aerial photos<br>
+        1 location<br>
+        Licensed for web use
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="package-title">Cinematic Short</div>
+      <div class="package-price">£325</div>
+      <div class="package-features">
+        60–90 sec 4K drone video<br>
+        20+ stills<br>
+        Licensed music included
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="package-title">Full Coverage</div>
+      <div class="package-price">£495</div>
+      <div class="package-features">
+        Aerial video + photos<br>
+        2 locations<br>
+        FPV highlights & editing
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="package-title">Commercial Pro</div>
+      <div class="package-price">£695+</div>
+      <div class="package-features">
+        Full-day shoot<br>
+        Cinematic edit + FPV<br>
+        Commercial licensing
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<button id="scrollToTop" title="Back to Top">↑</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 200 ? 'flex' : 'none';
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
