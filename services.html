@@ -15,7 +15,6 @@
       --accent: #FF01B6;
       --card-bg: rgba(0,0,0,0.76);
       --white: #fff;
-      --gray: #f2f2f2;
     }
     html, body {
       min-height: 100vh;
@@ -113,8 +112,8 @@
       box-shadow: 0 2px 12px 0 rgba(44,0,44,0.08);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: stretch;
+      text-align: left;
       margin: 0;
       flex: 1 1 290px;
       word-break: break-word;
@@ -122,6 +121,8 @@
       width: 100%;
       min-width: 0;
       box-sizing: border-box;
+      min-height: 150px;
+      position: relative;
     }
     .service-card b {
       color: var(--accent);
@@ -129,12 +130,22 @@
       font-weight: bold;
       display: block;
       margin-bottom: 0.7rem;
+      align-self: flex-start;
+      text-align: left;
+    }
+    .service-desc {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
     }
     .service-card:hover {
       box-shadow: 0 8px 36px 0 rgba(34,3,46,0.15);
       transform: translateY(-3px) scale(1.03);
     }
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .services-container {
         padding: 1.5rem 0.7rem 1.2rem 0.7rem;
         max-width: 99vw;
@@ -174,31 +185,45 @@
       <div class="services-list">
         <div class="service-card">
           <b>Aerial Photography</b>
-          High-resolution still images for real estate, marketing, inspections, and creative projects.
+          <div class="service-desc">
+            High-resolution still images for real estate, marketing, inspections, and creative projects.
+          </div>
         </div>
         <div class="service-card">
           <b>Cinematic Drone Video</b>
-          4K/5K video, dynamic tracking, and editing for events, tourism, property, and business promo.
+          <div class="service-desc">
+            4K/5K video, dynamic tracking, and editing for events, tourism, property, and business promo.
+          </div>
         </div>
         <div class="service-card">
           <b>FPV Flying</b>
-          First-person view drone footage for high-speed, immersive perspectives and creative projects.
+          <div class="service-desc">
+            First-person view drone footage for high-speed, immersive perspectives and creative projects.
+          </div>
         </div>
         <div class="service-card">
           <b>Roof & Asset Inspections</b>
-          Safe, rapid, and detailed inspections for roofs, towers, solar panels, and industrial sites.
+          <div class="service-desc">
+            Safe, rapid, and detailed inspections for roofs, towers, solar panels, and industrial sites.
+          </div>
         </div>
         <div class="service-card">
           <b>Construction Progress</b>
-          Regular site surveys and time-lapse to document construction and site progress.
+          <div class="service-desc">
+            Regular site surveys and time-lapse to document construction and site progress.
+          </div>
         </div>
         <div class="service-card">
           <b>Travel & Social Media</b>
-          Custom packages for tourism, hotels, hospitality, influencers, and social media content.
+          <div class="service-desc">
+            Custom packages for tourism, hotels, hospitality, influencers, and social media content.
+          </div>
         </div>
         <div class="service-card">
           <b>Event Coverage</b>
-          Festivals, sports, launches, and private events captured from unique perspectives.
+          <div class="service-desc">
+            Festivals, sports, launches, and private events captured from unique perspectives.
+          </div>
         </div>
       </div>
     </main>
