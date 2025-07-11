@@ -61,6 +61,7 @@
     @media (max-width: 680px) {
       .nav-links { top: 16px; right: 14px; gap: 13px; }
     }
+    /* LOGO TOP LEFT */
     .logo-top {
       width: 110px;
       margin: 32px 0 10px 0;
@@ -69,6 +70,22 @@
     }
     .logo-top:hover {
       transform: scale(1.06) rotate(-2deg);
+    }
+    a[style*="position: absolute"] {
+      position: absolute;
+      top: 32px;
+      left: 50px;
+      z-index: 99;
+    }
+    @media (max-width: 600px) {
+      a[style*="position: absolute"] .logo-top {
+        width: 68px !important;
+        margin-top: 10px !important;
+      }
+      a[style*="position: absolute"] {
+        left: 14px !important;
+        top: 10px !important;
+      }
     }
     .contact-container {
       width: 100%;
@@ -227,7 +244,10 @@
     <a href="services.html" class="nav-link">Services</a>
     <a href="contact.html" class="nav-link active">Contact</a>
   </nav>
-  <a href="index.html"><img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" /></a>
+  <!-- LOGO TOP LEFT, ABSOLUTE POSITION (same as other pages) -->
+  <a href="index.html" style="position: absolute; top: 32px; left: 50px; z-index: 99;">
+    <img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" />
+  </a>
   <main class="contact-container">
     <h1>Contact <span class="contact-highlight">Glasgow by Drone</span></h1>
     <div class="contact-options">
