@@ -24,7 +24,7 @@
       --youtube-red: #FF0000;
       --insta-gradient: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
-    /* Sticky Header */
+    /* Header styles (reuse on all pages) */
     .main-header {
       width: 100vw;
       position: fixed;
@@ -93,7 +93,7 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      padding-top: 76px; /* Prevent content behind header */
+      padding-top: 76px;
     }
     @media (max-width: 700px) {
       body { padding-top: 62px;}
@@ -188,43 +188,6 @@
     .flash-red { animation: flash-red 1s cubic-bezier(.7,1.1,.7,1.05); }
     .flash-insta { animation: flash-insta 1s cubic-bezier(.7,1.1,.7,1.05); }
     .flash-purple { animation: flash-purple 1s cubic-bezier(.7,1.1,.7,1.05);}
-    /* --- FORM --- */
-    form {
-      margin-top: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 17px;
-      align-items: stretch;
-    }
-    input, textarea {
-      padding: 12px 10px;
-      border-radius: 9px;
-      border: none;
-      background: #f2f2f2;
-      font-size: 1.02rem;
-      margin-bottom: 1px;
-      resize: vertical;
-    }
-    input:focus, textarea:focus {
-      outline: 2px solid var(--accent);
-      background: #fff;
-    }
-    button[type="submit"] {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 13px;
-      font-size: 1.07rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.18s, transform 0.14s;
-      box-shadow: 0 3px 14px 0 rgba(255,0,182,0.12);
-    }
-    button[type="submit"]:hover, button[type="submit"]:focus {
-      background: var(--accent-dark);
-      transform: scale(1.03);
-    }
     .footer {
       width: 100vw;
       position: fixed;
@@ -248,7 +211,6 @@
   </style>
 </head>
 <body>
-  <!-- Fixed Header with Logo + Navigation -->
   <header class="main-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo-link">
@@ -286,14 +248,8 @@
         Download Media Pack
       </a>
     </div>
-    <form action="mailto:info@glasgowbydrone.co.uk" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
     <p style="margin-top:1rem; color:#ffedff; font-size:.96rem; opacity:0.82;">
-      Prefer email or Instagram? Use the links above, or fill out the form and we'll get back to you within 1 business day.
+      Prefer email or Instagram? Use the links above and we'll get back to you within 1 business day.
     </p>
   </main>
   <div class="footer">
