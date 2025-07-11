@@ -24,6 +24,65 @@
       --youtube-red: #FF0000;
       --insta-gradient: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
+    /* Sticky Header */
+    .main-header {
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(30, 11, 39, 0.92);
+      z-index: 999;
+      box-shadow: 0 2px 24px 0 rgba(44,0,44,0.11);
+      padding: 0;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .header-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .header-logo {
+      width: 65px;
+      height: auto;
+      margin: 0;
+      display: block;
+      transition: transform 0.23s;
+    }
+    .header-logo-link:hover .header-logo { transform: scale(1.07) rotate(-2deg);}
+    .header-nav {
+      display: flex;
+      gap: 16px;
+    }
+    .nav-link {
+      color: #fff;
+      font-size: 1.03rem;
+      font-weight: bold;
+      opacity: 0.9;
+      text-decoration: none;
+      background: none;
+      padding: 7px 16px;
+      border-radius: 8px;
+      transition: background 0.15s, opacity 0.15s;
+      position: relative;
+    }
+    .nav-link.active, .nav-link:hover {
+      background: rgba(255, 1, 182, 0.16);
+      opacity: 1;
+    }
+    @media (max-width: 700px) {
+      .header-inner { height: 60px; padding: 0 6px; }
+      .header-logo { width: 44px;}
+      .header-nav { gap: 8px;}
+      .nav-link { font-size: .99rem; padding: 7px 7px;}
+    }
     body {
       min-height: 100vh;
       background: var(--primary);
@@ -34,58 +93,10 @@
       flex-direction: column;
       align-items: center;
       position: relative;
+      padding-top: 76px; /* Prevent content behind header */
     }
-    .nav-links {
-      position: absolute;
-      top: 40px;
-      right: 50px;
-      display: flex;
-      gap: 24px;
-      z-index: 99;
-    }
-    .nav-link {
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      opacity: 0.88;
-      text-decoration: none;
-      background: none;
-      padding: 4px 12px;
-      border-radius: 8px;
-      transition: background 0.15s;
-    }
-    .nav-link.active, .nav-link:hover {
-      background: rgba(255, 1, 182, 0.16);
-      opacity: 1;
-    }
-    @media (max-width: 680px) {
-      .nav-links { top: 16px; right: 14px; gap: 13px; }
-    }
-    /* LOGO TOP LEFT */
-    .logo-top {
-      width: 110px;
-      margin: 32px 0 10px 0;
-      display: block;
-      transition: transform 0.3s;
-    }
-    .logo-top:hover {
-      transform: scale(1.06) rotate(-2deg);
-    }
-    a[style*="position: absolute"] {
-      position: absolute;
-      top: 32px;
-      left: 50px;
-      z-index: 99;
-    }
-    @media (max-width: 600px) {
-      a[style*="position: absolute"] .logo-top {
-        width: 68px !important;
-        margin-top: 10px !important;
-      }
-      a[style*="position: absolute"] {
-        left: 14px !important;
-        top: 10px !important;
-      }
+    @media (max-width: 700px) {
+      body { padding-top: 62px;}
     }
     .contact-container {
       width: 100%;
@@ -231,23 +242,26 @@
     }
     @media (max-width: 480px) {
       .contact-container { margin: 18px auto 0 auto; padding: 1.1rem 0.3rem;}
-      .logo-top { width: 68px; margin-top: 10px; }
       h1 { font-size: 1.05rem; }
       .contact-link svg { height: 17px; width: 17px; margin-right: 5px; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="contact.html" class="nav-link active">Contact</a>
-  </nav>
-  <!-- LOGO TOP LEFT, ABSOLUTE POSITION (same as other pages) -->
-  <a href="index.html" style="position: absolute; top: 32px; left: 50px; z-index: 99;">
-    <img src="glasgowbydronetrans.png" class="logo-top" alt="Glasgow by Drone Logo" />
-  </a>
+  <!-- Fixed Header with Logo + Navigation -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo-link">
+        <img src="glasgowbydronetrans.png" alt="Glasgow by Drone Logo" class="header-logo" />
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
   <main class="contact-container">
     <h1>Contact <span class="contact-highlight">Glasgow by Drone</span></h1>
     <div class="contact-options">
