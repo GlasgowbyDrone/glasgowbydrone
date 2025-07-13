@@ -14,27 +14,6 @@
   <link rel="canonical" href="https://glasgowbydrone.co.uk/services.html" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="preload" href="glasgowbydronetrans.png" as="image">
-  <link rel="preload" href="website_background.mp4" as="video" type="video/mp4">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Aerial Drone Photography and Videography",
-    "provider": {
-      "@type": "Organization",
-      "name": "Glasgow by Drone",
-      "url": "https://glasgowbydrone.co.uk",
-      "logo": "https://glasgowbydrone.github.io/glasgowbydronetrans.png",
-      "sameAs": [
-        "https://instagram.com/glasgowbydroneofficial",
-        "https://www.youtube.com/channel/UCwjUBQ1vs9ph222ick2yWWA"
-      ]
-    },
-    "areaServed": "Scotland",
-    "description": "Explore aerial photography, drone videography, FPV footage, roof inspections and more — powered by certified remote pilots."
-  }
-  </script>
 
   <style>
     :root {
@@ -55,7 +34,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-x: hidden;
     }
+
     @media(max-width:700px) {
       body { padding-top: 62px; }
     }
@@ -113,13 +94,41 @@
       opacity: 1;
     }
 
-    @media(max-width:900px) {
-      .header-nav { gap: 12px; }
+    #menuToggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: auto;
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
     }
-    @media(max-width:700px) {
-      .header-inner { height: 60px; padding: 0 6px; }
-      .header-logo { width: 44px; }
-      .nav-link { font-size: .95rem; padding: 6px 10px; }
+
+    #menuToggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    #mobileMenu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: rgba(30,11,39,.95);
+      z-index: 998;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 20px;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      #menuToggle { display: block; }
     }
 
     .services-container {
@@ -252,53 +261,57 @@
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
+      <button id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 100 80" fill="#fff">
+          <rect width="100" height="12"></rect>
+          <rect y="30" width="100" height="12"></rect>
+          <rect y="60" width="100" height="12"></rect>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </header>
 
   <main class="services-container">
     <h1>Drone Services</h1>
     <div class="services-list">
-      <div class="service-card">
-        <div class="service-title">Aerial Photography</div>
-        <div class="service-desc">Stunning stills for real estate, marketing, tourism, and creative campaigns.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">Drone Videography</div>
-        <div class="service-desc">Cinematic footage in up to 4K HDR, including events, promos, and travel films.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">FPV Cinematic</div>
-        <div class="service-desc">Dynamic, immersive flights for commercial, creative, and sports content.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">Roof &amp; Building Inspections</div>
-        <div class="service-desc">Safe, high-res surveys for property, insurance, and maintenance checks.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">Construction Progress</div>
-        <div class="service-desc">Monitor site progress with regular aerial updates and timelapses.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-title">Custom Projects</div>
-        <div class="service-desc">Have a unique project? We offer tailored drone solutions across Scotland.</div>
-      </div>
+      <div class="service-card"><div class="service-title">Aerial Photography</div><div class="service-desc">Stunning stills for real estate, marketing, tourism, and creative campaigns.</div></div>
+      <div class="service-card"><div class="service-title">Drone Videography</div><div class="service-desc">Cinematic footage in up to 4K HDR, including events, promos, and travel films.</div></div>
+      <div class="service-card"><div class="service-title">FPV Cinematic</div><div class="service-desc">Dynamic, immersive flights for commercial, creative, and sports content.</div></div>
+      <div class="service-card"><div class="service-title">Roof &amp; Building Inspections</div><div class="service-desc">Safe, high-res surveys for property, insurance, and maintenance checks.</div></div>
+      <div class="service-card"><div class="service-title">Construction Progress</div><div class="service-desc">Monitor site progress with regular aerial updates and timelapses.</div></div>
+      <div class="service-card"><div class="service-title">Custom Projects</div><div class="service-desc">Have a unique project? We offer tailored drone solutions across Scotland.</div></div>
     </div>
   </main>
+
   <div class="footer" style="text-align: center;">&copy; 2025 Glasgow by Drone</div>
   <button id="scrollToTop" title="Back to Top">↑</button>
 
   <script>
     const scrollBtn = document.getElementById("scrollToTop");
-    window.onscroll = function () {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollBtn.style.display = "flex";
-      } else {
-        scrollBtn.style.display = "none";
-      }
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 200 ? "flex" : "none";
     };
-    scrollBtn.onclick = function () {
+    scrollBtn.onclick = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.style.right = mobileMenu.style.right === "0px" ? "-100%" : "0px";
+    });
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.style.right = "-100%";
+      });
+    });
   </script>
 
 </body>
